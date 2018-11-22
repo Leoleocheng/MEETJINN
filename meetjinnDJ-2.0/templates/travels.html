@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游记</title>
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <link rel="stylesheet" href="../static/css/homepage.css">
+    <style>
+        .cla1 td {
+            border: white;
+            margin-left: 0;
+        }
+
+        li {
+            list-style: none;
+            float: right;
+            margin-left: 10px;
+        }
+
+        .round_icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* 未访问的链接 */
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* 已访问的链接 */
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* 鼠标移动到链接上 */
+        a:active {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* 选定的链接 */
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#sub1').click(function () {
+                data1 = $("#citySelect").val();
+                html = $.ajax({
+                    url: "/travels/",
+                    type: 'POST',
+                    data: {'data': data1},
+                    success: function (html) {
+                        $("#div222").html(html);
+                    }
+                });
+            })
+
+        })
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse" id="cla1">
+        <ul class="navbar-nav " style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item dropdown" style="background: rgb(0,104,183);border-radius: 5px">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<div style="width: 100%;max-height: 600px">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="http://files.g4.xmgc360.com/you6.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="http://files.g4.xmgc360.com/you4.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="http://files.g4.xmgc360.com/you5.jpg">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+<div class="container" style="margin-top: 20px">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h3>热门游记</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-7">
+            <div class="form-group">
+                <table>
+                    <tr>
+                        <td style="width: 300px"><input type="text" class="cityinput" id="citySelect"
+                                                        placeholder="热门景点" style="width: 280px;height: 40px;border-radius: 10px">
+                            <script src="../static/js/homepage.js"></script>
+                        </td>
+                        <td>
+                            <button style="width: 100px" type="submit" class="btn btn-primary" id="sub1"><img
+                                    src="../static/img/Icon/sousuo.png" width="25px" alt=""></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4 column col-5">
+            <button style="width: 150px" type="submit" class="btn btn-primary"><img src="../static/img/Icon/youji.png"
+                                                                                    width="30px" alt=""><a href="/wtn/"
+                                                                                                           style="color: white"><a href="/wtn/">写游记</a></a>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-11" id="div222">
+            {% for view in list %}
+                <div>
+                    <a href="/travelnotes/?data={{ view.travels_id }}">
+                        <table style="margin: 0;">
+                            <tr>
+                                <td colspan="2"><h4>{{ view.travels_title }}</h4></td>
+                            </tr>
+                            <tr style="height: 150px;margin: 0">
+                                <td rowspan="2" style="width: 220px">
+                                    <img src="{{ view.travels_img_url }}" width="100%" alt="">
+                                </td>
+                                <td style="padding:20px">{{ view.md1 }}
+                                    　
+                                </td>
+                            </tr>
+                            <tr style="height: 50px">
+                                <td>
+                                    <li>收藏({{ view.count }})</li>
+                                    <li>{{ view.time1 }}</li>
+                                    <li><span style="color: #ff6600">{{ view.user_name }}</span></li>
+                                    <li><img src="{{ view.user_img }}" alt="" class="round_icon"></li>
+                                </td>
+                            </tr>
+                        </table>
+                    </a>
+                </div>
+
+                <hr>
+            {% endfor %}
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<div>
+    <a class="to-top" style="z-index: 999"><img src="../static/img/Icon/huidao.png" alt="" width="60px"></a>
+    <script>!function (o) {
+        "use strict";
+        o.fn.toTop = function (t) {
+            var i = this, e = o(window), s = o("html, body"),
+                n = o.extend({autohide: !0, offset: 420, speed: 500, position: !0, right: 15, bottom: 30}, t);
+            i.css({cursor: "pointer"}), n.autohide && i.css("display", "none"), n.position && i.css({
+                position: "fixed",
+                right: n.right,
+                bottom: n.bottom
+            }), i.click(function () {
+                s.animate({scrollTop: 0}, n.speed)
+            }), e.scroll(function () {
+                var o = e.scrollTop();
+                n.autohide && (o > n.offset ? i.fadeIn(n.speed) : i.fadeOut(n.speed))
+            })
+        }
+    }(jQuery);
+    $(function () {
+        $('.to-top').toTop();
+    });
+    </script>
+</div>
+<div class="row clearfix" style="background:rgba(52,58,64,1)">
+    <div class="col-md-2 column">
+    </div>
+    <div class="col-md-8 column">
+        <div id="fool" style="width: 100%;text-align: center;height: 100px;color: #e2e3e5;">
+            <p style="margin-top: 20px">© 2018 meetjinn.com 京ICP备0000000号
+                <img src="http://images.mafengwo.net/images/footer/police_record.png"
+                     width="12" style="margin:0 2px 4px 0;">公网安备000000000号<span
+                        class="m_l_10">违法和不良信息举报电话: ---------- 举报邮箱 ----------</span></p>
+            <p>网络出版服务许可证：----------<span class="m_l_10">增值电信业务经营许可证：京00000000</span> 营业执照帮助中心<span
+                    class="m_l_10">觅景客服:</span><span
+                    class="highlight">4006-000-000</span>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+
+#demo {
+    width: 100%;
+}
+
+#td1 {
+    background: #fea800;
+    border-radius: 10px;
+    width: 13%;
+}
+
+#ta1 div {
+    float: left;
+}
+
+#divbiao li {
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+}
+
+#but1 {
+    margin-top: 60px;
+    width: 70%;
+    background: #fea800;
+}
+
+#ul2 li {
+    list-style: none;
+    float: left;
+    width: 33%;
+}
+
+.tab-menu {
+    margin-top: 20px;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+
+#hourlist {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#hourlist li {
+    height: 40px;
+    width: 130px;
+    line-height: 40px;
+    float: left;
+    text-align: center;
+    position: relative;
+    font-size: 18px;
+}
+
+.tab-menu span {
+    margin: 4px;
+    display: inline-block;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    transition: left .4s;
+    -webkit-transition: left .4s;
+    -moz-transition: left .4s;
+}
+
+#hourlist li:hover {
+    cursor: pointer;
+}
+
+.tworow {
+    width: 260px;
+}
+
+.tworow span {
+    width: 120px;
+    background-color: rgba(0, 54, 80, 1);
+}
+
+.tworow .active {
+    color: white;
+}
+
+.tworow li {
+    width: 80px;
+    color: rgba(0, 54, 80, 1);
+}
+
+.eightrow li {
+    width: 50px;
+    color: white;
+}
+
+.eightrow .active {
+    color: #fea800;
+}
+
+.eightrow {
+    width: 700px;
+    background: #fea800;
+}
+
+.eightrow span {
+    width: 42px;
+    background: white;
+}
+
+a:link {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-family: Arial;
+}
+
+/* 未访问的链接 */
+a:visited {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-family: Arial;
+}
+
+a:active {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-family: Arial;
+}
+
+a:hover {
+    color: #fea800;
+    text-decoration: none;
+    font-family: Arial;
+}
+
+#daohang button {
+    background: rgba(255, 255, 255, 0)
+}
+
+#daohang {
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px
+}

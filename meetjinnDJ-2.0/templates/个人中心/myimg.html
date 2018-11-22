@@ -1,0 +1,360 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>图片</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../static/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="../../static/css/font-awesome.css" rel="stylesheet"/>
+    <link href="../../static/css/adminia.css" rel="stylesheet"/>
+    <link href="../../static/css/adminia-responsive.css" rel="stylesheet"/>
+    <link href="../../static/css/pages/faq.css" rel="stylesheet"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="../../static/css/个人中心.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/myimg.css">
+    <script src="../../static/js/myimg.js"></script>
+</head>
+
+<body>
+
+
+<div class="navbar navbar-fixed-top">
+
+    <div class="navbar-inner">
+        <a href="/homepage/"><img src="../../static/img/logo1.png" alt="" width="150px" style="float: left"></a>
+        <div class="container">
+            <a class="brand" href="/homepage/">
+                首页
+            </a>
+            <a class="brand" href="./">个人中心</a>
+            <div class="nav-collapse">
+            </div> <!-- /nav-collapse -->
+        </div> <!-- /container -->
+    </div> <!-- /navbar-inner -->
+</div>
+<div id="content" style="background: #FFFFFF">
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <div class="account-container">
+                    <div class="account-avatar">
+                        <img src="{{ user.user_img }}" alt="" class="thumbnail"/>
+                    </div> <!-- /account-avatar -->
+                    <div class="account-details">
+                        <span class="account-name">{{ user.user_name }}</span>
+                        {% if user.user_sex == 1 %}
+                            <span class="account-role">男</span>
+                        {% else %}
+                            <span class="account-role">女</span>
+                        {% endif %}
+
+                    </div> <!-- /account-details -->
+                </div> <!-- /account-container -->
+                <hr/>
+                <ul id="main-nav" class="nav nav-tabs nav-stacked">
+                    <li class="left-a">
+                        <a href="/house/">
+                            <i></i>
+                            我的收藏
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/plans/">
+                            <i></i>
+                            我的游记
+                        </a>
+                    </li>
+                    <li class="left-a active">
+                        <a href="/myimg/">
+                            <i></i>
+                            图片
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/interlocution/">
+                            <i></i>
+                            我的问答
+                        </a>
+                    </li>
+
+                    <li class="left-a">
+                        <a href="/mate/">
+                            <i></i>
+                            我的结伴
+                        </a>
+                    </li>
+
+
+                    <li class="left-a">
+                        <a href="/install/">
+                            <i></i>
+                            设置
+                        </a>
+                    </li>
+                </ul>
+                <hr/>
+                <br/>
+            </div> <!-- /span3 -->
+            <div class="span9">
+                <h1 class="page-title">
+
+                    图片
+                </h1>
+                <div class="col-md-9 column">
+                    <div class="col-md-12 column">
+                        <div class="ydc-entered-box">
+                            <div class="ydc-content-right">
+                                <div class="ydc-right-head">
+                                    <div class="ydc-right-head-info">
+                                        <dl>
+                                            <a href="#">
+                                                <span style="font-size: 30px" id="count">{{ count }}</span>
+                                                <dt style="font-size: 18px;margin-top: 10px;color:black"
+                                                    class="divider">图片
+                                                </dt>
+                                            </a>
+                                        </dl>
+                                        <dl>
+                                            <a href="#">
+                                                <div class="a1">
+                                                    <div class="mockup-content">
+                                                        <div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+                                                            <button type="button">上传图片</button>
+                                                            <div class="morph-content">
+                                                                <div>
+                                                                    <div class="content-style-form content-style-form-1">
+                                                                        <h2>上传图片</h2>
+                                                                        <form action="/biography/" method="post" enctype="multipart/form-data">
+                                                                            <p><label>选择图片</label><input type="file" name="imageData"></p>
+                                                                            <p><label>图片地址</label><input type="text" name="cityname"></p>
+                                                                            <input type="submit" value="提交">
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="position: absolute;top: 5px;left: auto;right: 10px" onclick="guanbi()">关闭</div>
+                                                                <script>
+                                                                    function guanbi() {
+                                                                        window.location.href='/myimg/'
+                                                                    }
+                                                                </script>
+                                                            </div>
+
+                                                        </div><!-- morph-button -->
+                                                    </div><!-- /form-mockup -->
+                                                    <script src="../../static/js/classie.js"></script>
+                                                    <script src="../../static/js/uiMorphingButton_fixed.js"></script>
+                                                    <script>
+                                                        (function () {
+                                                            var docElem = window.document.documentElement, didScroll,
+                                                                scrollPosition;
+
+                                                            // trick to prevent scrolling when opening/closing button
+                                                            function noScrollFn() {
+                                                                window.scrollTo(scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0);
+                                                            }
+
+                                                            function noScroll() {
+                                                                window.removeEventListener('scroll', scrollHandler);
+                                                                window.addEventListener('scroll', noScrollFn);
+                                                            }
+
+                                                            function scrollFn() {
+                                                                window.addEventListener('scroll', scrollHandler);
+                                                            }
+
+                                                            function canScroll() {
+                                                                window.removeEventListener('scroll', noScrollFn);
+                                                                scrollFn();
+                                                            }
+
+                                                            function scrollHandler() {
+                                                                if (!didScroll) {
+                                                                    didScroll = true;
+                                                                    setTimeout(function () {
+                                                                        scrollPage();
+                                                                    }, 60);
+                                                                }
+                                                            };
+
+                                                            function scrollPage() {
+                                                                scrollPosition = {
+                                                                    x: window.pageXOffset || docElem.scrollLeft,
+                                                                    y: window.pageYOffset || docElem.scrollTop
+                                                                };
+                                                                didScroll = false;
+                                                            };
+
+                                                            scrollFn();
+
+                                                            [].slice.call(document.querySelectorAll('.morph-button')).forEach(function (bttn) {
+                                                                new UIMorphingButton(bttn, {
+                                                                    closeEl: '.icon-close',
+                                                                    onBeforeOpen: function () {
+                                                                        // don't allow to scroll
+                                                                        noScroll();
+                                                                    },
+                                                                    onAfterOpen: function () {
+                                                                        // can scroll again
+                                                                        canScroll();
+                                                                    },
+                                                                    onBeforeClose: function () {
+                                                                        // don't allow to scroll
+                                                                        noScroll();
+                                                                    },
+                                                                    onAfterClose: function () {
+                                                                        // can scroll again
+                                                                        canScroll();
+                                                                    }
+                                                                });
+                                                            });
+
+                                                            // for demo purposes only
+                                                            [].slice.call(document.querySelectorAll('form button')).forEach(function (bttn) {
+                                                                bttn.addEventListener('click', function (ev) {
+                                                                    ev.preventDefault();
+                                                                });
+                                                            });
+                                                        })();
+                                                    </script>
+                                                </div>
+                                            </a>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin: 10px">
+                    <input type="button" id="btn1" value="我的图片"/>
+                    <input type="button" id="btn2" value="我的收藏"/>
+                </div>
+                <div class="widget">
+
+                    <div class="widget-header">
+                        <h3 id="title1">我的图片</h3>
+
+                    </div> <!-- /widget-header -->
+
+                    <div class="widget-content">
+                        <div>
+                            <div id="tab_1" style="margin: 0;background: white">
+                                {% for yearmonth in yearmonthList %}
+                                    <div style="width: 100%;margin-top: 10px;border-radius: 10px;">
+                                        <div style="width: 100%;height: 50px;display: flex;">
+                                            {% for img in yearmonth %}
+                                                {% if img.index == 0 %}
+                                                    <div style="margin: 20px auto auto 20px"><span
+                                                            style="font-size: 30px;color: red">{{ img.img_time }}</span>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+
+                                        <div style="width: 100%;" class="img">
+                                            {% for img in yearmonth %}
+                                                <div id="{{ img.divmyimgid }}" style="text-align: center">
+                                                    <img style="width: 200px;height: 170px;margin: 25px"
+                                                         src="{{ img.img_url }}"><br>
+                                                    <button class="btn"><a onclick="DeleteImg(this)"
+                                                                           data-myimgid="{{ img.img_id }}"><span>删除图片</span></a>
+                                                    </button>
+
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+
+                            <script>
+                                function DeleteImg(t) {
+                                    var imgid = t.getAttribute("data-myimgid")
+                                    var divimgid = "div-" + imgid
+                                    alert(divimgid)
+                                    var r = confirm("你确定要删除这张图吗？");
+                                    if (r == true) {
+                                        document.getElementById(divimgid).style.display = "none"
+                                        html = $.ajax({
+                                            url: '/myimg/',
+                                            type: "POST",
+                                            data: {"imgid": imgid, "type": "DeleteImg"}
+                                        })
+                                    }
+                                }
+                            </script>
+
+
+                            <div id="tab_2" style="margin: 0;background: white">
+
+                                {% for img in mycollectimgList %}
+                                    <div style="margin: 25px;float: left;" id="{{ img.img_id }}">
+                                        <div>
+                                            <img style="width: 220px;height: 160px;" src="{{ img.img_url }}"></div>
+                                        <div style="margin-left: 7px;">
+                                            <img onclick="DeleteCollectImg(this)" data-imgid="{{ img.img_id }}"
+                                                 style="width: 25px" src="../../static/img/Icon/xin2.png">
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <script>
+                                {#                        取消收藏图片#}
+
+                                function DeleteCollectImg(t) {
+                                    var imgid = t.getAttribute("data-imgid")
+                                    var src = t.getAttribute("src")
+                                    if (src == ('../../static/img/Icon/xin.png')) {
+                                        t.setAttribute("src", "../static/img/Icon/xin2.png")
+                                        jiajian = 1
+                                    } else {
+                                        t.setAttribute("src", "../../static/img/Icon/xin.png")
+                                        jiajian = -1
+                                    }
+                                    html = $.ajax({
+                                        url: '/myimg/',
+                                        type: "POST",
+                                        data: {"imgid": imgid, "jiajian": jiajian, "type": "DeleteCollectImg"}
+                                    })
+                                }
+                            </script>
+
+
+                        </div>
+                        <script src="../../static/js/jquery-1.7.2.min.js"></script>
+                        <script>
+
+                            $("#btn1").click(function () {
+                                    $("#btn1").css("background", "#f7f7f7");
+                                    $("#btn2,#btn3").css("background", "#ffdab9");
+                                    document.getElementById("title1").innerText = '我的图片';
+                                    document.getElementById("count").innerText = {{ count }}
+                                        document.getElementById("tab_1").style.display = "block";
+                                    document.getElementById("tab_2").style.display = "none";
+                                }
+                            );
+
+                            $("#btn2").click(function () {
+                                    $("#btn2").css("background", "#eee8cd");
+                                    $("#btn1,#btn3").css("background", "#c1cdc1");
+                                    document.getElementById("title1").innerText = '我的收藏';
+                                    document.getElementById("count").innerText = {{ count_collection }}
+                                        document.getElementById("tab_1").style.display = "none";
+                                    document.getElementById("tab_2").style.display = "block";
+                                }
+                            );
+
+                        </script>
+                    </div>
+                </div>
+            </div> <!-- /span9 -->
+        </div>
+    </div> <!-- /container -->
+</body>
+</html>

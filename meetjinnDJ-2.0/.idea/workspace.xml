@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7fb68daf-7754-4735-9316-7fe7d93ac78c" name="默认的" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/meetjinnDJ$manage.coverage" NAME="manage Coverage Results" MODIFIED="1541059776407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$fuwenbenshangchuan.coverage" NAME="fuwenbenshangchuan Coverage Results" MODIFIED="1540888551057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zahuo" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$01___1_.coverage" NAME="01.不文明词语测试案例 (1) Coverage Results" MODIFIED="1541303797362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../../课上内容/01.朴素贝叶斯/03.bayes" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$ai.coverage" NAME="百度ai接口 Coverage Results" MODIFIED="1541145222388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zahuo" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$Demo01.coverage" NAME="Demo01 Coverage Results" MODIFIED="1541215668433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../../qq" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$.coverage" NAME="词库转换 Coverage Results" MODIFIED="1541228109996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$gongyong.coverage" NAME="gongyong Coverage Results" MODIFIED="1539784229524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jinn" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$suanfafunction.coverage" NAME="suanfafunction Coverage Results" MODIFIED="1541149639279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$view1.coverage" NAME="view1 Coverage Results" MODIFIED="1540541322664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jinn" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$shuju.coverage" NAME="shuju Coverage Results" MODIFIED="1541120030672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$01_.coverage" NAME="01.不文明词语测试案例 Coverage Results" MODIFIED="1541377708239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../../qq/课上内容/01.朴素贝叶斯/03.bayes" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$ai2.coverage" NAME="百度ai接口2 Coverage Results" MODIFIED="1541146312086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zahuo" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$views.coverage" NAME="views Coverage Results" MODIFIED="1540351345618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jinn" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$function.coverage" NAME="function Coverage Results" MODIFIED="1540888926937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jinn" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$decisiontree.coverage" NAME="decisiontree Coverage Results" MODIFIED="1541212656703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$KNN.coverage" NAME="KNN Coverage Results" MODIFIED="1541211117565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
+    <SUITE FILE_PATH="coverage/meetjinnDJ$shuju2.coverage" NAME="shuju2 Coverage Results" MODIFIED="1541142623589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
+  </component>
+  <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf>
+      <file leaf-file-name="function.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jinn/function.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="126" column="29" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jinn/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4636">
+              <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="景点详情.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/景点详情.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2052">
+              <caret line="71" column="23" lean-forward="true" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="图片瀑布.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/图片瀑布.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+=======
+      <file leaf-file-name="地点详情.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/地点详情.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="87" column="24" lean-forward="true" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../../qq/MJ/MJ/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+=======
+      <file leaf-file-name="function.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jinn/function.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="60" column="12" lean-forward="true" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meetjinnDJ/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+              <folding>
+                <element signature="e#634#666#0" expanded="true" />
+              </folding>
+=======
+      <file leaf-file-name="sql.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jinn/sql.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="526">
+              <caret line="167" column="31" lean-forward="true" selection-start-line="167" selection-start-column="31" selection-end-line="167" selection-end-column="31" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="views2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jinn/views2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+=======
+      <file leaf-file-name="view1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jinn/view1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1674">
+              <caret line="267" column="41" lean-forward="true" selection-start-line="267" selection-start-column="41" selection-end-line="267" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="interlocution.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/个人中心/interlocution.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+=======
+      <file leaf-file-name="推荐页面.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/推荐页面.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="607">
+              <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/个人中心/install.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/个人中心/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="270">
+              <caret line="10" column="82" lean-forward="true" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
+=======
+            <state relative-caret-position="688">
+              <caret line="190" column="18" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="18" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>unorderedlist</find>
+      <find>lang</find>
+      <find>img</find>
+      <find>320</find>
+      <find>loading</find>
+      <find>move-addinf</find>
+      <find>verificationCode</find>
+      <find>yanerr1</find>
+      <find>message-inf</find>
+      <find>get-message</find>
+      <find>alert</find>
+      <find>yanerr2</find>
+      <find>tele1</find>
+      <find>tele2</find>
+      <find>czphone</find>
+      <find>pri</find>
+      <find>a</find>
+      <find>qa1</find>
+      <find>&lt;/form&gt;</find>
+      <find>城市名</find>
+      <find>松鼠</find>
+      <find>print</find>
+      <find>故宫</find>
+      <find>长城</find>
+      <find>qadetails</find>
+      <find>userid</find>
+      <find>comment</find>
+      <find>&lt;link</find>
+      <find>problem</find>
+      <find>comment(</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/templates/注册.html" />
+        <option value="$PROJECT_DIR$/templates/旅游榜单.html" />
+        <option value="$PROJECT_DIR$/templates/提问.html" />
+        <option value="$PROJECT_DIR$/templates/发布结伴.html" />
+        <option value="$PROJECT_DIR$/templates/写游记.html" />
+        <option value="$PROJECT_DIR$/static/css/destination.css" />
+        <option value="$PROJECT_DIR$/static/js/homepage.js" />
+        <option value="$PROJECT_DIR$/templates/目的地.html" />
+        <option value="$PROJECT_DIR$/../../../../../jq22jQuery4043747201710142052/jQuery404/index.html" />
+        <option value="$PROJECT_DIR$/../../../../../jq22jQuery4043747201710142052/jQuery404/css/404.css" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+        <option value="$PROJECT_DIR$/../../../../../jq229709.html" />
+        <option value="$PROJECT_DIR$/static/css/404.css" />
+        <option value="$PROJECT_DIR$/templates/404.html" />
+        <option value="$PROJECT_DIR$/meetjinnDJ/settings.py" />
+        <option value="$PROJECT_DIR$/jinn/shuju.py" />
+        <option value="$PROJECT_DIR$/algorithm/shuju.py" />
+        <option value="$PROJECT_DIR$/algorithm/用户水印.py" />
+        <option value="$PROJECT_DIR$/algorithm/shuju2.py" />
+        <option value="$PROJECT_DIR$/algorithm/百度ai接口.py" />
+        <option value="$PROJECT_DIR$/zahuo/百度ai接口.py" />
+        <option value="$PROJECT_DIR$/zahuo/百度ai接口2.py" />
+        <option value="$PROJECT_DIR$/algorithm/KNN.py" />
+        <option value="$PROJECT_DIR$/algorithm/decisiontree.py" />
+        <option value="$PROJECT_DIR$/algorithm/cikutxt/xq.txt" />
+        <option value="$PROJECT_DIR$/algorithm/cikutxt/art.txt" />
+        <option value="$PROJECT_DIR$/algorithm/cikutxt/history.txt" />
+        <option value="$PROJECT_DIR$/algorithm/cikutxt/modern" />
+        <option value="$PROJECT_DIR$/algorithm/cikutxt/scenery" />
+        <option value="$PROJECT_DIR$/algorithm/cikutxt/landscape" />
+        <option value="$PROJECT_DIR$/algorithm/词库转换.py" />
+        <option value="$PROJECT_DIR$/../../../../../qq/课上内容/01.朴素贝叶斯/03.bayes/01.不文明词语测试案例.py" />
+        <option value="$PROJECT_DIR$/algorithm/cikutxt/food.txt" />
+        <option value="$PROJECT_DIR$/algorithm/cikutxt/fame.txt" />
+        <option value="$PROJECT_DIR$/algorithm/cikutxt/scenery.txt" />
+        <option value="$PROJECT_DIR$/templates/榜单详情.html" />
+        <option value="$PROJECT_DIR$/templates/游记.html" />
+        <option value="$PROJECT_DIR$/static/css/homepage.css" />
+        <option value="$PROJECT_DIR$/meetjinnDJ/urls.py" />
+        <option value="$PROJECT_DIR$/templates/回答.html" />
+        <option value="$PROJECT_DIR$/jinn/sql.py" />
+        <option value="$PROJECT_DIR$/templates/问答.html" />
+        <option value="$PROJECT_DIR$/algorithm/01.不文明词语测试案例.py" />
+        <option value="$PROJECT_DIR$/jinn/views.py" />
+        <option value="$PROJECT_DIR$/algorithm/bayes.py" />
+        <option value="$PROJECT_DIR$/templates/地点详情.html" />
+        <option value="$PROJECT_DIR$/jinn/view1.py" />
+        <option value="$PROJECT_DIR$/templates/景点详情.html" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/algorithm/suanfafunction.py" />
+        <option value="$PROJECT_DIR$/../../../../../jq22jqueryqplbt9548201808210036/jqueryqplbt/js/imagesloaded.pkgd.min.js" />
+        <option value="$PROJECT_DIR$/../../../../../jq22jqueryqplbt9548201808210036/jqueryqplbt/index.html" />
+        <option value="$PROJECT_DIR$/../../../../../jq22jqueryqplbt9548201808210036/jqueryqplbt/index_1.html" />
+        <option value="$PROJECT_DIR$/templates/地点详情.html" />
+        <option value="$PROJECT_DIR$/templates/推荐页面.html" />
+        <option value="$PROJECT_DIR$/static/img/recommend/css/base.css" />
+        <option value="$PROJECT_DIR$/templates/导航栏.html" />
+        <option value="$PROJECT_DIR$/templates/首页.html" />
+        <option value="$PROJECT_DIR$/jinn/views.py" />
+        <option value="$PROJECT_DIR$/jinn/function.py" />
+        <option value="$PROJECT_DIR$/../../../../../qq/MJ/MJ/urls.py" />
+        <option value="$PROJECT_DIR$/meetjinnDJ/urls.py" />
+        <option value="$PROJECT_DIR$/templates/个人中心/house.html" />
+        <option value="$PROJECT_DIR$/templates/个人中心/index.html" />
+        <option value="$PROJECT_DIR$/templates/个人中心/install.html" />
+        <option value="$PROJECT_DIR$/templates/个人中心/interlocution.html" />
+=======
+        <option value="$PROJECT_DIR$/templates/首页.html" />
+        <option value="$PROJECT_DIR$/templates/推荐页面.html" />
+        <option value="$PROJECT_DIR$/algorithm/suanfafunction.py" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-9" />
+    <option name="width" value="1940" />
+<<<<<<< HEAD
+    <option name="height" value="902" />
+=======
+    <option name="height" value="1080" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="meetjinnDJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meetjinnDJ" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meetjinnDJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meetjinnDJ" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meetjinnDJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meetjinnDJ" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="个人中心" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../项目零件" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings sdk-home="D:\Anaconda\ana\python.exe">
+        <option name="mySdkHome" value="D:\Anaconda\ana\python.exe" />
+        <option name="myAddSourceRoots" value="true" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\jinn" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\templates\个人中心" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static\img" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static\img" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static\js" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static\jq22summernote-develop847420160420\summernote-develop20160420" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static\css" />
+    </key>
+<<<<<<< HEAD
+=======
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static\css" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\static\img\Icon" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\algorithm" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\algorithm\ciku" />
+      <recent name="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\algorithm\cikutxt" />
+    </key>
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Django server.meetjinnDJ">
+    <configuration name="词库转换" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="meetjinnDJ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda\ana\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/词库转换.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="01.不文明词语测试案例 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="meetjinnDJ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda\ana\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../../课上内容/01.朴素贝叶斯/03.bayes" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../../../课上内容/01.朴素贝叶斯/03.bayes/01.不文明词语测试案例.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="01.不文明词语测试案例" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="meetjinnDJ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda\ana\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../../qq/课上内容/01.朴素贝叶斯/03.bayes" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Administrator\Desktop\cz\项目\觅景\MEETJINN\meetjinnDJ\algorithm\bayes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Demo01" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="meetjinnDJ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda\ana\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../../qq" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../../../qq/Demo01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="decisiontree" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="meetjinnDJ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda\ana\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/decisiontree.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="meetjinnDJ" type="Python.DjangoServer" factoryName="Django server">
+      <module name="meetjinnDJ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="meetjinnDJ.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Administrator\main\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.meetjinnDJ" />
+      <item itemvalue="Python.decisiontree" />
+      <item itemvalue="Python.Demo01" />
+      <item itemvalue="Python.01.不文明词语测试案例" />
+      <item itemvalue="Python.词库转换" />
+      <item itemvalue="Python.01.不文明词语测试案例 (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.01.不文明词语测试案例" />
+        <item itemvalue="Python.01.不文明词语测试案例 (1)" />
+        <item itemvalue="Python.词库转换" />
+        <item itemvalue="Python.Demo01" />
+        <item itemvalue="Python.decisiontree" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7fb68daf-7754-4735-9316-7fe7d93ac78c" name="默认的" comment="" />
+      <created>1538441868253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538441868253</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="0" width="1940" height="1080" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="调试" order="15" weight="0.41841003" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.21145834" side_tool="true" weight="0.24895397" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="14" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="运行" order="8" sideWeight="0.7885417" visible="true" weight="0.14748953" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16458334" />
+=======
+      <window_info anchor="bottom" id="运行" order="8" sideWeight="0.7885417" weight="0.45" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1995842" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="找到" order="13" sideWeight="0.49947917" weight="0.32845187" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/algorithm/bayes.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="15" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/zahuo/用户水印.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zahuo/fuwenbenshangchuan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="28" column="63" lean-forward="true" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zahuo/百度ai接口.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zahuo/百度ai接口2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="35" column="48" lean-forward="true" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../qq/Demo01.py" />
+    <entry file="file://$PROJECT_DIR$/../../../../../qq/Demo03.py" />
+    <entry file="file://$PROJECT_DIR$/algorithm/KNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="e#16#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/艺术专用词汇.scel">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2592" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/llx.txt" />
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/xq.txt" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/modern.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/landscape.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/art.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="164" column="3" lean-forward="true" selection-start-line="164" selection-start-column="3" selection-end-line="164" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/history.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-350335">
+          <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda/ana/Lib/site-packages/numpy/core/_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="1067" selection-start-line="1067" selection-end-line="1067" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/词库转换.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3294">
+          <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../课上内容/01.朴素贝叶斯/03.bayes/01.不文明词语测试案例.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="100" column="41" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/decisiontree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/food.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="5997" column="6" lean-forward="true" selection-start-line="5997" selection-start-column="6" selection-end-line="5997" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/fame.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="442" column="5" lean-forward="true" selection-start-line="442" selection-start-column="5" selection-end-line="442" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/cikutxt/scenery.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/ku/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="4113" column="3" selection-start-line="4113" selection-start-column="3" selection-end-line="4113" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/游记.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="169" column="21" lean-forward="true" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/榜单详情.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1337">
+          <caret line="55" column="68" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/写游记.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/meetjinnDJ/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/内容显示与隐藏/readmore.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/问题.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/结伴详情.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+    <entry file="file://$PROJECT_DIR$/templates/问答.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="133" column="87" lean-forward="true" selection-start-line="133" selection-start-column="87" selection-end-line="133" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python36/Lib/wsgiref/simple_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/底部相关链接栏.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" selection-start-line="7" selection-end-line="25" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/bayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-267">
+          <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+          <folding>
+            <element signature="e#24#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/algorithm/suanfafunction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../jq22jqueryqplbt9548201808210036/jqueryqplbt/index_1.html" />
+    <entry file="file://$PROJECT_DIR$/static/img/recommend/js/imagesloaded.pkgd.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/svg11/svg-structure.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/地点详情.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jinn/views3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8181" />
+      </provider>
+    </entry>
+    <entry file="file://D:/Python36/Lib/sre_parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="618" selection-start-line="618" selection-end-line="618" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/问题.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../jq22jqueryqplbt9548201808210036/jqueryqplbt/index.html" />
+    <entry file="file://$PROJECT_DIR$/templates/首页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1167">
+          <caret line="21" column="52" lean-forward="true" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/img/recommend/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="551" column="18" selection-start-line="551" selection-start-column="18" selection-end-line="551" selection-end-column="18" />
+=======
+    <entry file="file://$PROJECT_DIR$/jinn/function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="60" column="12" lean-forward="true" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jinn/sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="167" column="31" lean-forward="true" selection-start-line="167" selection-start-column="31" selection-end-line="167" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jinn/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4636">
+          <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/景点详情.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2052">
+<<<<<<< HEAD
+          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jinn/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="322" column="44" selection-start-line="322" selection-start-column="44" selection-end-line="322" selection-end-column="44" />
+=======
+          <caret line="71" column="23" lean-forward="true" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jinn/view1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="155" column="35" lean-forward="true" selection-start-line="155" selection-start-column="35" selection-end-line="155" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jinn/sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="109" column="9" lean-forward="true" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/推荐页面.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/导航栏.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="37" column="70" lean-forward="true" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/homepage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="190" column="18" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jinn/function.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="376">
+          <caret line="126" column="29" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
+=======
+        <state relative-caret-position="1674">
+          <caret line="267" column="41" lean-forward="true" selection-start-line="267" selection-start-column="41" selection-end-line="267" selection-end-column="41" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/templates/图片瀑布.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../qq/MJ/MJ/urls.py">
+=======
+    <entry file="file://$PROJECT_DIR$/templates/首页.html">
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/meetjinnDJ/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding>
+            <element signature="e#634#666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/个人中心/house.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="326" column="35" selection-start-line="326" selection-start-column="35" selection-end-line="326" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jinn/views2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/templates/地点详情.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="87" column="24" lean-forward="true" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/templates/个人中心/interlocution.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/个人中心/install.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/个人中心/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="82" lean-forward="true" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
+=======
+    <entry file="file://$PROJECT_DIR$/algorithm/suanfafunction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/推荐页面.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+>>>>>>> 2c760c5acadbd010be1422dafc0cf2ce03d25a21
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

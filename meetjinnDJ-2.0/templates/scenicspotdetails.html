@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>景点详情</title>
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <link rel="stylesheet" href="../static/css/scenicspot.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <!--引用百度地图API-->
+    <style type="text/css">
+        .iw_poi_title {
+            color: #CC5522;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            padding-right: 13px;
+            white-space: nowrap
+        }
+
+        .iw_poi_content {
+            font: 12px arial, sans-serif;
+            overflow: visible;
+            padding-top: 4px;
+            white-space: -moz-pre-wrap;
+            word-wrap: break-word
+        }
+    </style>
+    <link rel="stylesheet" href="../static/css/pinglun/comment.css">
+    <link rel="stylesheet" href="../static/css/pinglun/style.css">
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=RbG6pakQNmwGyA4lmOWzxtBrAM2OrsRn"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse" id="cla1">
+        <ul class="navbar-nav" style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<div id="weather">
+    {% if weather == 4 %}
+        <div class="icon sunny">
+            <div class="sun">
+                <div class="rays"></div>
+            </div>
+        </div>
+        <span style="color: white">晴</span>
+    {% elif weather == 2 %}
+        <div class="icon rainy">
+            <div class="cloud"></div>
+            <div class="rain"></div>
+        </div>
+        <span style="color: white">雨</span>
+    {% elif weather == 1 %}
+        <div class="icon cloudy">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+        <span style="color: white">多云</span>
+    {% elif weather == 3 %}
+        <div class="icon flurries">
+            <div class="cloud"></div>
+            <div class="snow">
+                <div class="flake"></div>
+                <div class="flake"></div>
+            </div>
+        </div>
+        <span style="color: white">雪</span>
+    {% endif %}
+</div>
+<div class="container" style="margin-top: 20px">
+    <div class="col-md-9">
+        <h2 style="color: #ee8800">{{ list.scenicspot_name }}<a
+                href="/soutu/?scenicspot_id={{ list.scenicspot_id }}"><span
+                style="font-size: 20px">({{ list.count_img }}张图片)</span></a></h2>
+    </div>
+    {% if request.session.is_login %}
+        <div class="col-md-3">
+
+            <button onclick="shoucang(this)">{% if collectionstate == '0' %}
+                <img src="../static/img/Icon/shoucang1.png" alt="" height="25px">收藏景点{% else %}
+                <img src="../static/img/Icon/shoucang2.png" alt="" height="30px">已收藏{% endif %}</button>
+            <script>
+                function shoucang(_this) {
+                    a = _this.innerHTML;
+                    if (a == '<img src="../static/img/Icon/shoucang1.png" alt="" height="25px">收藏景点') {
+                        _this.innerHTML = '<img src="../static/img/Icon/shoucang2.png" alt="" height="25px">已收藏';
+                        type = 1
+                    }
+                    else {
+                        _this.innerHTML = '<img src="../static/img/Icon/shoucang1.png" alt="" height="25px">收藏景点';
+                        type = 2
+                    }
+                    data1 = $(this).text();
+                    companion ={{ list.scenicspot_id }};
+                    html = $.ajax({
+                        url: "/scenicspotcollection/",
+                        type: 'POST',
+                        data: {'type': type, 'companion': companion},
+                        success: function (html) {
+                        }
+                    });
+                }
+            </script>
+        </div>
+    {% endif %}
+    <hr>
+    <div>
+        <table id="tab1">
+            <tr>
+                <td>景点介绍</td>
+                <td id="a1">景点点评</td>
+                <script>
+                    $(function () {
+                        $('#a1').click(function () {
+                            //根据a标签的href转换为id选择器，获取id元素所处的位置，并高度减50px（这里根据需要自由设置）
+                            $('html,body').animate({scrollTop: ($("#1").offset().top - 50)}, 800);
+                        });
+                    });
+                </script>
+
+            </tr>
+        </table>
+    </div>
+</div>
+<div style="background: #f5f5f5">
+    <hr style="margin-top: 0;border: #d3d3d3 solid 1px">
+    <div class="container">
+        <div>
+            <img src="{{ list.scenicspot_img_url }}" alt="">
+        </div>
+        <div>
+            {{ list.scenicspot_md }}
+        </div>
+
+    </div>
+    <hr style="margin-top: 40px">
+    <div class="container">
+        <h4>觅镜</h4>
+        <p>{{ list.scenicspot_position }}</p>
+        <div style="width:500px;height:500px;border:#ccc solid 1px;border-radius: 50%" id="dituContent"></div>
+        <script type="text/javascript">
+            //创建和初始化地图函数：
+            // 百度地图API功能
+
+            function initMap() {
+                createMap();//创建地图
+                setMapEvent();//设置地图事件
+                addMapControl();//向地图添加控件
+                addMarker();//向地图中添加marker
+            }
+
+            //创建地图函数：
+            function createMap() {
+                var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+                map.centerAndZoom("{{ list.scenicspot_position }}", 17);      // 初始化地图,用城市名设置地图中心点
+                window.map = map;//将map变量存储在全局
+            }
+
+
+            //地图事件设置函数：
+            function setMapEvent() {
+                map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+                map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+                map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+                map.enableKeyboard();//启用键盘上下左右键移动地图
+            }
+
+            //地图控件添加函数：
+            function addMapControl() {
+                //向地图中添加缩放控件
+                var ctrl_nav = new BMap.NavigationControl({
+                    anchor: BMAP_ANCHOR_TOP_LEFT,
+                    type: BMAP_NAVIGATION_CONTROL_ZOOM
+                });
+                map.addControl(ctrl_nav);
+                //向地图中添加缩略图控件
+                var ctrl_ove = new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 1});
+                map.addControl(ctrl_ove);
+            }
+
+
+            //创建marker
+            function addMarker() {
+                for (var i = 0; i < markerArr.length; i++) {
+                    var json = markerArr[i];
+                    var p0 = json.point.split("|")[0];
+                    var p1 = json.point.split("|")[1];
+                    var point = new BMap.Point(p0, p1);
+                    var iconImg = createIcon(json.icon);
+                    var marker = new BMap.Marker(point, {icon: iconImg});
+                    var iw = createInfoWindow(i);
+                    var label = new BMap.Label(json.title, {"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)});
+                    marker.setLabel(label);
+                    map.addOverlay(marker);
+                    label.setStyle({
+                        borderColor: "#808080",
+                        color: "#333",
+                        cursor: "pointer"
+                    });
+
+                    (function () {
+                        var index = i;
+                        var _iw = createInfoWindow(i);
+                        var _marker = marker;
+                        _marker.addEventListener("click", function () {
+                            this.openInfoWindow(_iw);
+                        });
+                        _iw.addEventListener("open", function () {
+                            _marker.getLabel().hide();
+                        })
+                        _iw.addEventListener("close", function () {
+                            _marker.getLabel().show();
+                        })
+                        label.addEventListener("click", function () {
+                            _marker.openInfoWindow(_iw);
+                        })
+                        if (!!json.isOpen) {
+                            label.hide();
+                            _marker.openInfoWindow(_iw);
+                        }
+                    })()
+                }
+            }
+
+            //创建InfoWindow
+            function createInfoWindow(i) {
+                var json = markerArr[i];
+                var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+                return iw;
+            }
+
+            //创建一个Icon
+            function createIcon(json) {
+                var icon = new BMap.Icon("http://files.g4.xmgc360.com/dingwei.png", new BMap.Size(json.w, json.h), {
+                    imageOffset: new BMap.Size(-json.l, -json.t),
+                    infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+                    offset: new BMap.Size(json.x, json.h)
+                })
+                return icon;
+            }
+
+            initMap();//创建和初始化地图
+        </script>
+    </div>
+    <hr style="margin-top: 20px;border: #d3d3d3 solid 1px">
+</div>
+<div style="background: white">
+    <div class="container">
+        <div class="col-md-12">
+
+            <h3>景点评论</h3>
+            <p id="1"></p>
+            {% if request.session.is_login %}
+                <div class="reviewArea clearfix">
+                                        <textarea id="writepinlun" class="content comment-input"
+                                                  placeholder="评论一下&hellip;" onkeyup="keyUP(this)"></textarea>
+                    <a href="javascript:;" class="plBtn" onclick="sentcomment(this)" data-a="{{ a }}">评论</a>
+                </div>
+            {% endif %}
+            <div id="commentarea">
+                {{ html }}
+            </div>
+            <script>
+                {#                写评论#}
+
+                function sentcomment(t) {
+                    var newcomment = document.getElementById("writepinlun").value
+                    var a = t.getAttribute("data-a")
+                    html = $.ajax({
+                        url: "/scenicspot/",
+                        type: 'POST',
+                        data: {"newcomment": newcomment, "type": "writecomment", "a": a},
+                        success: function (html) {
+                            var commentarea = document.getElementById("commentarea")
+                            commentarea.innerHTML = html + commentarea.innerHTML
+                        }
+                    })
+
+                }
+
+                {#    fabulous#}
+                {% if request.session.is_login %}
+                    function zancomment(t) {
+                        var commentid = t.getAttribute("data-commentid")
+                        var praisenumberID = "praise-number-" + commentid
+                        var num = parseInt(document.getElementById(praisenumberID).innerText)
+                        var src = t.getAttribute("src")
+                        if (src == ("../static/img/fabulous/meizan2.png")) {
+                            t.setAttribute("src", "../static/img/fabulous/yizan2.png")
+                            document.getElementById(praisenumberID).innerText = num + 1
+                            var jiajian = 1
+                        } else {
+                            t.setAttribute("src", "../static/img/fabulous/meizan2.png")
+                            document.getElementById(praisenumberID).innerText = num - 1
+                            var jiajian = -1
+                        }
+                        html = $.ajax({
+                            url: "/scenicspot/",
+                            type: 'POST',
+                            data: {"jiajian": jiajian, "type": "dianzan", "commentid": commentid},
+
+                        });
+                    }
+                {% endif %}
+                {#删除评论#}
+
+                function DeleteComment(t) {
+                    var commentid = t.getAttribute("data-commentid")
+                    document.getElementById(commentid).style.display = "none"
+                    html = $.ajax({
+                        url: "/scenicspot/",
+                        type: 'POST',
+                        data: {'commentid': commentid, "type": "DeleteComment"},
+                    });
+                }
+            </script>
+
+
+        </div>
+    </div>
+</div>
+<div>
+    <a class="to-top" style="z-index: 999"><img src="../static/img/Icon/huidao.png" alt="" width="60px"></a>
+    <script>!function (o) {
+        "use strict";
+        o.fn.toTop = function (t) {
+            var i = this, e = o(window), s = o("html, body"),
+                n = o.extend({autohide: !0, offset: 420, speed: 500, position: !0, right: 15, bottom: 30}, t);
+            i.css({cursor: "pointer"}), n.autohide && i.css("display", "none"), n.position && i.css({
+                position: "fixed",
+                right: n.right,
+                bottom: n.bottom
+            }), i.click(function () {
+                s.animate({scrollTop: 0}, n.speed)
+            }), e.scroll(function () {
+                var o = e.scrollTop();
+                n.autohide && (o > n.offset ? i.fadeIn(n.speed) : i.fadeOut(n.speed))
+            })
+        }
+    }(jQuery);
+    $(function () {
+        $('.to-top').toTop();
+    });
+    </script>
+</div>
+<div class="row clearfix" style="background:rgba(52,58,64,1);margin-top: 30px">
+    <div class="col-md-2 column">
+    </div>
+    <div class="col-md-8 column">
+        <div id="fool" style="width: 100%;text-align: center;height: 100px;color: #e2e3e5;">
+            <p style="margin-top: 20px">© 2018 meetjinn.com 京ICP备0000000号
+                <img src="http://images.mafengwo.net/images/footer/police_record.png"
+                     width="12" style="margin:0 2px 4px 0;">公网安备000000000号<span
+                        class="m_l_10">违法和不良信息举报电话: ---------- 举报邮箱 ----------</span></p>
+            <p>网络出版服务许可证：----------<span class="m_l_10">增值电信业务经营许可证：京00000000</span> 营业执照帮助中心<span
+                    class="m_l_10">觅景客服:</span><span
+                    class="highlight">4006-000-000</span>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+</body>
+</html>

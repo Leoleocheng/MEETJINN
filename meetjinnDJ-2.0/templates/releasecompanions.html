@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布结伴</title>
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/datedropper.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/timedropper.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/Buttons.css">
+    <link rel="stylesheet" href="../static/css/releasecompanions.css">
+    <link href="../static/css/ku/fuwenbenboots.css" rel="stylesheet">
+    <script src="../static/js/ku/fuwenbenjq.js"></script>
+    <script src="../static/js/ku/fuwenbenboot.js"></script>
+    <link href="../static/jq22summernote-develop847420160420/summernote-develop20160420/summernote.css"
+          rel="stylesheet">
+    <script src="../static/jq22summernote-develop847420160420/summernote-develop20160420/summernote.js"></script>
+    <link rel="stylesheet" href="../static/css/wtn.css">
+    <script>
+        function isPoneAvailable(_this) {
+            var myreg = /^((\+?86)|(\(\+86\)))?1\d{10}$/;
+            if (!myreg.test($(_this).val())) {
+                $("#err1").fadeIn(100);
+            } else {
+                $("#err1").fadeOut(100)
+            }
+        }
+
+    </script>
+    <script>
+        function shield() {
+            var top = ($(window).height() - $('#test').height()) / 2;
+            var left = ($(window).width() - $('#test').width()) / 2;
+            var scrollTop = $(document).scrollTop();
+            var scrollLeft = $(document).scrollLeft();
+            $('#log_window').css({position: 'absolute', 'top': top + scrollTop, left: left + scrollLeft}).show();
+            $('body').css("overflow", "hidden")
+        }
+
+        function cancel_shield() {
+            var l = document.getElementById("log_window");
+            l.style.display = "none";
+            $('body').css("overflow", "auto")
+        }
+    </script>
+    <style>
+        #cla1 ul li{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div id="test"></div>
+<div id="log_window">
+    <div id="divzhe">
+        <h3>图片<span id="err1"></span>请重新上传正规图片!!</h3>
+        <a href="javascript:cancel_shield()">关闭</a>
+    </div>
+               
+</div>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="font-size: 16px;" >
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse " id="cla1">
+        <ul class="navbar-nav pull-right" style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div style="margin: 10px">
+                <span><a href="" target="_self">结伴</a></span>
+                <span>>发起结伴</span>
+            </div>
+            <div style="margin-top: 20px">
+                <p><span style="font-size: 30px;font-weight: bold;">发起结伴</span><span
+                        style="color:#999;font-size: 15px">(找到更多趣味相投的小伙伴)</span></p>
+            </div>
+            <form action="/releasecompanions/" method="post" enctype="multipart/form-data">
+                <div>
+                    <table id="table_1">
+                        <tr id="tr_1" name="tr_1">
+                            <td class="col_1">
+                                <div>
+                                    <p>活动标题：</p>
+                                </div>
+                            </td>
+                            <td class="col_2">
+                                <div style="width: 100%">
+                                    <input placeholder="不超过50字" maxlength="50" class="kuan-max" name="title">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="tr_2" name="tr_2">
+                            <td class="col_1">
+                                <div>
+                                    <p>联系方式：</p>
+                                </div>
+                            </td>
+                            <td class="col_2">
+                                <div>
+                                    <input placeholder="手机" class="kuan-min" onchange="isPoneAvailable(this)"
+                                           name="phone">
+                                </div>
+                                <div style="display: none;color: red;font-size: 15px;margin: 2px;height: 20px"
+                                     id="err1">无效的手机号!!!
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="tr_3" name="tr_3">
+                            <td class="col_1">
+                                <div>
+                                    <p>地点：</p>
+                                </div>
+                            </td>
+                            <td class="col_2">
+                                <div>
+                                    <input name="place" autocomplete="off" class="cityinput kuan-min" id="citySelect"
+                                           type="text" value="苏州">
+                                    <script src="../static/js/homepage.js"></script>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="tr_5" name="tr_5">
+                            <td class="col_1">
+                                <div>
+                                    <p>出行时间：</p>
+                                </div>
+                            </td>
+                            <td class="col_2">
+                                <div>
+                                    <input type="text" id="date" name="date" autocomplete="off">
+                                    <script src="../static/js/ku/datedropper.min.js"></script>
+                                    <script>
+                                        $("#date").dateSelect();
+                                    </script>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="tr_6" name="tr_6">
+                            <td class="col_1">
+                                <div>
+                                    <p>活动天数：</p>
+                                </div>
+                            </td>
+                            <td class="col_2">
+                                <div style="float: left;display: flex">
+                                    <input class="kuan-min" type="text" name="time">
+                                    <p style="font-size: 20px;
+            font-weight: initial;
+            text-align: right;">天</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="tr_7" name="tr_7">
+                            <td class="col_1">
+                                <div>
+                                    <p>预期人数：</p>
+
+                                </div>
+                            </td>
+                            <td class="col_2">
+                                <div style="display: flex;float: left">
+                                    <input type="text" class="kuan-min" name="expect">
+                                    <p style="font-size: 20px;
+            font-weight: initial;
+            text-align: right;">人</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="tr_9" name="tr_9">
+                            <td class="col_1">
+                                <div>
+
+                                </div>
+                            </td>
+                            <td class="col_2">
+                                <div style="height: 70px">
+                                    <input type="file" name="img">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <h3>结伴描述</h3>
+                    <div id="summernote"></div>
+                    <input type="text" style="display: none" id="html" name="html">
+                    <script>
+                        $('#summernote').summernote({
+                            lang: 'zh-CN',
+                            Height: 600,
+                            placeholder: '请在此写游记...',
+                            toolbar: [
+                                // [groupName, [list of button]]
+                                ['style1', ['style']],
+                                ['style', [, 'bold', 'italic', 'underline', 'strikethrough']],
+                                ['para', ['ul', 'ol',]],
+                                ['insert', ['link', 'picture',]],
+                                ["misc", ['fullscreen', 'undo', 'redo']]
+                            ],
+                            callbacks: {
+                                onImageUpload: function (files) {
+                                    var imageData = new FormData();
+                                    imageData.append("imageData", files[0]);
+                                    $.ajax({
+                                        data: imageData,
+                                        type: "POST",
+                                        url: "/passimg/",
+                                        cache: false,
+                                        contentType: false,
+                                        processData: false,
+                                        success: function (result) {
+                                            s = result.substr(0, 1);
+                                            if (s == 'h') {
+                                                var imgNode = document.createElement("img");
+                                                imgNode.src = result;
+                                                $('#summernote').summernote('insertNode', imgNode);
+                                            }
+                                            else {
+                                                $("#err1").html(result);
+                                                shield();
+                                            }
+
+                                        },
+                                        error: function () {
+                                            alert("上传图片失败");
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    </script>
+                    <div id="alerts"></div>
+                    <button class="button button-3d button-box button-jumbo" style="width: 100px;height: 50px;
+                                 background-color: rgba(24,66,213,0.5)" type="submit" id="tijiao">
+                        <span>提交</span>
+                    </button>
+                    <script>
+                        $('#tijiao').click(function () {
+                            text = document.getElementsByClassName("note-editable panel-body")[0].innerHTML;
+                            $("#html").val(text)
+                        })
+                    </script>
+                    <hr>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="row clearfix" style="background:rgba(52,58,64,1)">
+    <div class="col-md-2 column">
+    </div>
+    <div class="col-md-8 column">
+        <div id="fool" style="width: 100%;text-align: center;height: 100px;color: #e2e3e5;">
+            <p style="margin-top: 20px">© 2018 meetjinn.com 京ICP备0000000号
+                <img src="http://images.mafengwo.net/images/footer/police_record.png"
+                     width="12" style="margin:0 2px 4px 0;">公网安备000000000号<span
+                        class="m_l_10">违法和不良信息举报电话: ---------- 举报邮箱 ----------</span></p>
+            <p>网络出版服务许可证：----------<span class="m_l_10">增值电信业务经营许可证：京00000000</span> 营业执照帮助中心<span
+                    class="m_l_10">觅景客服:</span><span
+                    class="highlight">4006-000-000</span>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>目的地</title>
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://css.mafengwo.net/css/mdd/mfw-place.2015.css?1521574026" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <link rel="stylesheet" href="../static/css/homepage.css">
+    <link rel="stylesheet" href="../static/css/destination.css">
+    <link rel="stylesheet" href="../static/zahuo/rotate.css">
+    <script>
+        $(document).ready(function () {
+            $('#fadetab li').mouseover(function () {
+                data1 = $(this).text();
+                html = $.ajax({
+                    url: "/search/",
+                    type: 'POST',
+                    data: {'data': data1},
+                    success: function (html) {
+                        $("#div3311").html(html);
+                    }
+                });
+            })
+
+        })
+    </script>
+    <style>
+        #tab3 dd{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse" id="cla1">
+        <ul class="navbar-nav" style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/" style="background: rgb(0,104,183);border-radius: 5px">目的地</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<script type="text/javascript">
+    $("#header >").addClass("header-place-default").hover(function (e) {
+        e.stopPropagation();
+        $(this).removeClass('header-place-default');
+    }, function (e) {
+        e.stopPropagation();
+        $(this).stop().css({
+            opacity: 0.1
+        }).addClass('header-place-default').animate({
+            opacity: 1
+        }, 300).find('.dropdown-group >').hide();
+    });
+</script>
+<div class="row" data-cs-t="目的地首页" style="padding: 0;width: 100%">
+    <div class="place-focus" data-cs-p="头图">
+        <div class="show-banner show-info-notes">
+            <img data-ow="3456" data-oh="2720" style="width: 100%"
+                 src='http://files.g4.xmgc360.com/mdd1.jpg'/>
+        </div>
+        <div class="place-search-panel place-search-panel-sm" style="width: 450px">
+            <h2>想去哪</h2>
+            <form name="mdd-search-form" action="/homepage/" method="post">
+                <div class="searchbar">
+                    <button type="submit" class="btn btn-info" style="background: #ee6600;border: #ee6600"><img
+                            src="../static/img/Icon/sousuo.png" width="35px" alt=""></button>
+                    <input autocomplete="off" class="cityinput" id="citySelect" type="text" name="city"
+                           placeholder="我想去..."
+                           style="width: 350px;height: 45px;background: white;border-radius: 5px;font-size: 20px"/>
+                    <script src="../static/js/homepage.js"></script>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row" style="height: 450px">
+        <div class="col-md-2 column">
+        </div>
+        <div class="col-md-8 column">
+            <h2 align="center">热门旅游地</h2>
+            <ul id="tabs">
+                <li><a href="#" title="tab1">内地</a></li>
+                <li><a href="#" title="tab2">港澳</a></li>
+                <li><a href="#" title="tab3">欧美</a></li>
+                <li><a href="#" title="tab4">非亚</a></li>
+            </ul>
+            <div id="content" style="margin-top: 10px">
+                <div id="tab1">
+                    <dl>
+                        <dt>直辖市</dt>
+                        <dd>上海</dd>
+                        <dd>北京</dd>
+                        <dd>重庆</dd>
+                        <dd>天津</dd>
+                    </dl>
+                    <br>
+                    <dl>
+                        <dt>江苏</dt>
+                        <dd><a href="/region/?data=1">苏州</a></dd>
+                        <dd><a href="/region/?data=2">南京</a></dd>
+                        <dd><a href="/region/?data=3">扬州</a></dd>
+                        <dd>无锡市</dd>
+                        <dd>徐州市</dd>
+                        <dd>常州市</dd>
+                        <dd>南通市</dd>
+                        <dd>连云港市</dd>
+                        <dd>淮安市</dd>
+                        <dd>盐城市</dd>
+                        <dd>扬州市</dd>
+                    </dl>
+                    <br>
+                    <dl>
+                        <dt>四川</dt>
+                        <dd><a href="/region/?data=4">成都</a></dd>
+                        <dd><a href="/region/?data=6">阿坝</a></dd>
+                        <dd><a href="/region/?data=5">稻城</a></dd>
+                        <dd>绵阳</dd>
+                        <dd> 自贡市</dd>
+                        <dd>攀枝花市</dd>
+                        <dd>泸州市</dd>
+                        <dd>德阳市</dd>
+                        <dd>广元市</dd>
+                        <dd>内江市</dd>
+                    </dl>
+                    <br>
+                    <dl>
+                        <dt>浙江</dt>
+                        <dd>杭州</dd>
+                        <dd>乌镇</dd>
+                        <dd>西塘</dd>
+                        <dd>千岛湖</dd>
+                        <dd>普陀山</dd>
+                        <dd>富阳市</dd>
+                        <dd>临安市</dd>
+                        <dd>宁波市</dd>
+                        <dd>余姚市</dd>
+                        <dd>慈溪市</dd>
+                        <dd>乐清市</dd>
+                        <dd>奉化市</dd>
+
+                    </dl>
+                    <br>
+                </div>
+                <div id="tab2">
+                    <dl>
+                        <dt>香港</dt>
+                        <dd>香港岛</dd>
+                        <dd>九龙半岛</dd>
+                        <dd>新界</dd>
+                        <dd>中西区</dd>
+                        <dd>湾仔区</dd>
+                        <dd>油尖旺区</dd>
+                        <dd>深水埗区</dd>
+                        <dd>黄大仙区</dd>
+                        <dd>荃湾区</dd>
+                        <dd>西贡区</dd>
+                    </dl>
+                    <br>
+                    <dl>
+                        <dt>澳门</dt>
+                        <dd>花地玛堂区</dd>
+                        <dd>圣安多尼堂区</dd>
+                        <dd>大堂区</dd>
+                        <dd>望德堂区</dd>
+                        <dd>风顺堂区</dd>
+                        <dd>嘉模堂区</dd>
+                        <dd>圣方济各堂区</dd>
+                        <dd>路氹城</dd>
+                    </dl>
+                </div>
+                <div id="tab3">
+                    <dl>
+                        <dt>美国</dt>
+                        <dd>夏威夷(Hawaii)</dd>
+                        <dd>旧金山(SanFrancisco)</dd>
+                        <dd>华盛顿(Washington)</dd>
+                        <dd>芝加哥(Chicago)</dd>
+                        <dd>哥伦比亚(Columbia)</dd>
+                        <dd>丹佛(Denver)</dd>
+                    </dl>
+                    <br>
+                    <br>
+                    <dl>
+                        <dt>德国</dt>
+                        <dd>慕尼黑(Munich)</dd>
+                        <dd>柏林(Berlin)</dd>
+                        <dd>波茨坦(Brandenburg)</dd>
+                        <dd>不来梅(Bremen)</dd>
+                    </dl>
+                </div>
+                <div id="tab4">
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <script>
+                $(document).ready(function () {
+                    $("#content div").hide(); // Initially hide all content
+                    $("#tabs li:first").attr("id", "current"); // Activate first tab
+                    $("#content div:first").fadeIn(); // Show first tab content
+
+                    $('#tabs a').mouseover(function (e) {
+                        e.preventDefault();
+                        $("#content div").hide(); //Hide all content
+                        $("#tabs li").attr("id", ""); //Reset id's
+                        $(this).parent().attr("id", "current"); // Activate this
+                        $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+                    });
+                })();
+            </script>
+        </div>
+        <div class="col-md-2 column">
+        </div>
+    </div>
+</div>
+<hr style="border: 1px solid #eee;margin:0">
+<div class="row" style="background: #f9f9f9">
+    <div class="col-md-2 column col-2">
+    </div>
+    <div class="col-md-8 column col-8">
+        <div id="div33" style="margin-top: 0">
+            <h2 align="center" style="margin-bottom: 30px">当季推荐</h2>
+            <ul class="tabbtn" id="fadetab" style="margin-bottom: 0">
+                <li class="current"><a href="" onmouseover="">1月</a></li>
+                <li><a href="">2月</a></li>
+                <li><a href="">3月</a></li>
+                <li><a href="">4月</a></li>
+                <li><a href="">5月</a></li>
+                <li><a href="">6月</a></li>
+                <li><a href="">7月</a></li>
+                <li><a href="">8月</a></li>
+                <li><a href="">9月</a></li>
+                <li><a href="">10月</a></li>
+                <li><a href="">11月</a></li>
+                <li><a href="">12月</a></li>
+            </ul><!--tabbtn end-->
+            <div class="tabcon" id="fadecon" style="clear: both">
+                <div class="row" id="div3311">
+                    {% for view in list %}
+                        <div class="col-md-4 column">
+                            <img src="{{ view.scenicspot_img_url }}" alt="" style="width: 100%;">
+                            <div style="position: absolute; top: 0; left: 0;width: 100%;text-align: center;font-size: 1vw;color: white">
+                                <b>{{ view.scenicspot_name }}</b>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div><!--tabcon end-->
+        </div>
+    </div>
+    <div class="col-md-2 column col-2">
+    </div>
+</div>
+<div>
+    <a class="to-top" style="z-index: 999"><img src="../static/img/Icon/huidao.png" alt="" width="60px"></a>
+    <script>!function (o) {
+        "use strict";
+        o.fn.toTop = function (t) {
+            var i = this, e = o(window), s = o("html, body"),
+                n = o.extend({autohide: !0, offset: 420, speed: 500, position: !0, right: 15, bottom: 30}, t);
+            i.css({cursor: "pointer"}), n.autohide && i.css("display", "none"), n.position && i.css({
+                position: "fixed",
+                right: n.right,
+                bottom: n.bottom
+            }), i.click(function () {
+                s.animate({scrollTop: 0}, n.speed)
+            }), e.scroll(function () {
+                var o = e.scrollTop();
+                n.autohide && (o > n.offset ? i.fadeIn(n.speed) : i.fadeOut(n.speed))
+            })
+        }
+    }(jQuery);
+    $(function () {
+        $('.to-top').toTop();
+    });
+    </script>
+</div>
+<div class="container-fluid">
+    <div class="row clearfix" style="background:rgb(52,58,64);">
+        <div class="col-md-2 column">
+        </div>
+        <div class="col-md-8 column">
+            <div id="fool" style="width: 100%;text-align: center;height: 100px;color: white;">
+                <p style="margin-top: 20px">© 2018 meetjinn.com 京ICP备0000000号
+                    <img src="http://images.mafengwo.net/images/footer/police_record.png"
+                         width="12" style="margin:0 2px 4px 0;">公网安备000000000号<span
+                            class="m_l_10">违法和不良信息举报电话: ---------- 举报邮箱 ----------</span></p>
+                <p>网络出版服务许可证：----------<span class="m_l_10">增值电信业务经营许可证：京00000000</span> 营业执照帮助中心<span
+                        class="m_l_10">觅景客服:</span><span
+                        class="highlight">4006-000-000</span>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-2 column">
+        </div>
+    </div>
+</div>
+</body>
+</html>

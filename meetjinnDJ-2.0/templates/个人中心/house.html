@@ -1,0 +1,500 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>旅游收藏</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../static/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="../../static/css/font-awesome.css" rel="stylesheet"/>
+    <link href="../../static/css/adminia.css" rel="stylesheet"/>
+    <link href="../../static/css/adminia-responsive.css" rel="stylesheet"/>
+    <link href="../../static/css/pages/faq.css" rel="stylesheet"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+    <link href="../../static/css/个人中心.css" rel="stylesheet">
+</head>
+<style>
+
+    .a1 a {
+        display: block;
+        width: 100px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: #ff9e00;
+        position: absolute;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        margin-left: 5%;
+        margin-top: -15px;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .ydc-right-head {
+        display: flex;
+    }
+
+    li {
+        padding-left: 40px;
+    }
+
+    .myTabContent ul li {
+
+    }
+
+    .ydc-right-head-info {
+        display: flex;
+        height: 100px;
+        -webkit-flex: 1 1 200px;
+        -ms-flex: 1 1 200px;
+        flex: 2 2 200px;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 700;
+        background-color: #f4f4f4;
+        border-radius: 3px;
+    }
+
+    .ydc-right-head-info dl {
+        -webkit-flex: 1 1 0%;
+        -ms-flex: 1 1 0%;
+        flex: 1 1 0%
+    }
+</style>
+<style>
+    .excerpt .cat i {
+        position: absolute;
+        top: 50%;
+        margin-top: -4px;
+        right: -4px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: middle;
+        border-left: 4px solid #3399CC;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+    }
+
+    .excerpt .cat {
+        color: #FFF;
+        background-color: #3399CC;
+        padding: 3px 6px;
+        font-size: 12px;
+        display: inline-block;
+        position: relative;
+        top: -2px;
+        margin-right: 6px;
+    }
+
+    .excerpt h2 {
+        display: inline;
+        font-size: 18px;
+        line-height: 24px;
+        margin-top: 0;
+        font-weight: bold;
+    }
+
+    .excerpt .focus {
+        float: left;
+        margin-left: -235px;
+        width: 220px;
+    }
+
+    .excerpt .meta {
+        color: #999;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .excerpt .time, .excerpt .comment, .excerpt .views {
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .excerpt .meta a {
+        color: #999;
+    }
+
+    .excerpt .note {
+        font-size: 12px;
+        color: #999;
+        word-wrap: break-word;
+        line-height: 20px;
+        cursor: default;
+    }
+
+    .glyphicon {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .excerpt {
+        clear: both;
+        border: 1px solid #EAEAEA;
+        padding: 20px 5px 20px 255px;
+        overflow: hidden;
+        background-color: #fff;
+        margin-bottom: -1px;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block;
+    }
+
+    #btn1, #btn2, #btn3 {
+        width: 160px;
+        height: 40px;
+        border: none;
+        border-radius: 15px;
+    }
+
+    #btn1 {
+        background: #ffdab9;
+    }
+
+    #btn1:visited {
+        border: none;
+    }
+
+    #btn2 {
+        background: #eee8cd;
+    }
+
+    #btn3 {
+        background: #cdc8b1;
+    }
+
+    #tab_1, #tab_2, #tab_3 {
+        margin-top: 20px;
+        width: 95%;
+        height: 90%;
+        border-radius: 30px;
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+
+    #tab_1 {
+        background: #c1cdc1;
+    }
+
+    #tab_2 {
+        background: #f7f7f7;
+    }
+
+    #tab_3 {
+        background: #eee8b1;
+    }
+
+    #tab_1 {
+        display: block;
+    }
+
+    #tab_2, #tab_3 {
+        display: none;
+    }
+
+    body, div, p, ul, ol, li, dl, dt, dd, form, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    body, p, div {
+        margin: 0;
+        padding: 0;
+        word-wrap: break-word;
+    }
+
+    body, p, div {
+        margin: 0;
+        padding: 0;
+        word-wrap: break-word;
+    }
+</style>
+
+
+<body>
+
+
+<div class="navbar navbar-fixed-top">
+
+    <div class="navbar-inner">
+        <a href="/homepage/"><img src="../../static/img/logo1.png" alt="" width="150px" style="float: left"></a>
+        <div class="container">
+            <a class="brand" href="/homepage/">
+                首页
+            </a>
+            <a class="brand" href="./">个人中心</a>
+            <div class="nav-collapse">
+            </div> <!-- /nav-collapse -->
+        </div> <!-- /container -->
+    </div> <!-- /navbar-inner -->
+</div>
+<div id="content" style="background: #FFFFFF">
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <div class="account-container">
+                    <div class="account-avatar">
+                        <img src="{{ user_list.user_img }}" alt="" class="thumbnail"/>
+                    </div> <!-- /account-avatar -->
+                    <div class="account-details">
+                        <span class="account-name">{{ user_list.user_name }}</span>
+                        {% if user_list.user_sex == 1 %}
+                            <span class="account-role">男</span>
+                        {% else %}
+                            <span class="account-role">女</span>
+                        {% endif %}
+
+                    </div> <!-- /account-details -->
+                </div> <!-- /account-container -->
+                <hr/>
+                <ul id="main-nav" class="nav nav-tabs nav-stacked">
+
+                    <li class="active left-a">
+                        <a href="/house/">
+                            <i></i>
+                            我的收藏
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/plans/">
+                            <i></i>
+                            我的游记
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/myimg/">
+                            <i></i>
+                            图片
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/interlocution/">
+                            <i></i>
+                            我的问答
+                        </a>
+                    </li>
+
+                    <li class="left-a">
+                        <a href="/mate/">
+                            <i></i>
+                            我的结伴
+                        </a>
+                    </li>
+
+                    <li class="left-a">
+                        <a href="/install/">
+                            <i></i>
+                            设置
+                        </a>
+                    </li>
+                </ul>
+                <hr/>
+                <br/>
+            </div> <!-- /span3 -->
+            <div class="span9">
+                <h1 class="page-title">
+                    我的收藏
+                </h1>
+                <div class="col-md-9 column">
+                    <div class="col-md-12 column">
+                        <div class="ydc-entered-box">
+                            <div class="ydc-content-right">
+                                <div class="ydc-right-head">
+                                    <div class="ydc-right-head-info">
+                                        <dl>
+                                            <a href="#">
+                                                <span style="font-size: 30px" id="count">{{ count_scenicspot }}</span>
+                                                <dt style="font-size: 18px;margin-top: 10px;color:black"
+                                                    class="divider">我的收藏 <br>
+                                                </dt>
+                                            </a>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin: 10px">
+                    <input type="button" id="btn1" value="景点收藏"/>
+                    <input type="button" id="btn2" value="游记收藏"/>
+                    {#                        <input type="button" id="btn3" value="结伴收藏"/>#}
+                </div>
+                <div class="widget">
+
+                    <div class="widget-header">
+                        <h3 id="title1">景点收藏</h3>
+
+                    </div> <!-- /widget-header -->
+
+                    <div class="widget-content">
+                        <div>
+                            <div id="tab_1" style="margin: 0;background: white">
+                                {% for scenicspot in scenicspot_list %}
+                                    <div style=" width: 350px; height: auto;float: left;margin: 10px">
+                                        <a href="/scenicspot/?data={{ scenicspot.scenicspot_id }}">
+                                            <img src="{{ scenicspot.scenicspot_img_url }}" alt=""
+                                                 style="width: 350px;height: 220px;border-radius: 10px">
+                                        </a>
+                                        <div>
+                                            <img style="width: 20px" src="../../static/img/Icon/xin2.png"
+                                                 onclick="ScenicspotCollect(this)"
+                                                 data-scenicspotid="{{ scenicspot.scenicspot_id }}">
+                                            <span style="color:black;font-weight: bolder;font-size: 20px">{{ scenicspot.scenicspot_name }}</span>
+                                        </div>
+
+                                    </div>
+
+                                {% endfor %}
+
+                                {#                    取消收藏景点#}
+                                <script>
+                                    function ScenicspotCollect(t) {
+                                        var scenicspotid = t.getAttribute("data-scenicspotid")
+                                        var src = t.getAttribute("src")
+
+                                        if (src == ('../../static/img/Icon/xin.png')) {
+                                            t.setAttribute("src", "../static/img/Icon/xin2.png")
+                                            jiajian = 1
+                                        } else {
+                                            t.setAttribute("src", "../../static/img/Icon/xin.png")
+                                            jiajian = -1
+                                        }
+                                        html = $.ajax({
+                                            url: '/house/',
+                                            type: "POST",
+                                            data: {
+                                                "scenicspotid": scenicspotid,
+                                                "jiajian": jiajian,
+                                                "type": "ScenicspotCollect"
+                                            }
+                                        })
+                                    }
+                                </script>
+
+
+                            </div>
+                            <div id="tab_2" style="margin: 0;background: white">
+
+                                {% for travels in travels_collection %}
+                                    <div style="display:flex;float: left;margin-top: 30px">
+                                        <div style="width: 500px;">
+                                            <div style="margin: auto;width: 400px"><a
+                                                    href="/travelnotes/?data={{ travels.travels_id }}"><img
+                                                    src="{{ travels.travels_img_url }}" style="width: 400px;"></a></div>
+                                        </div>
+                                        <div style="margin:0 auto auto 15px;width: 50%">
+                                            <div>
+                                                <a href="/travelnotes/?data={{ travels.travels_id }}">{{ travels.travels_title }}</a>
+                                            </div>
+                                            <div style="margin-top: 15px"><img src="{{ travels.user_img }}"
+                                                                               style="border-radius: 50%;width: 25px"><span>{{ travels.user_name }}</span>
+                                            </div>
+                                            <div style="margin-top: 15px"><a
+                                                    href="/travelnotes/?data={{ travels.travels_id }}"><span>{{ travels.shorttext }}</span></a>
+                                            </div>
+                                            <div style="text-align: right"><img style="width: 20px"
+                                                                                onclick="TravelsCollect(this)"
+                                                                                src="../../static/img/Icon/xin2.png"
+                                                                                data-travelsid="{{ travels.travels_id }}">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                {% endfor %}
+                            </div>
+                            {#                    取消收藏游记#}
+                            <script>
+                                function TravelsCollect(t) {
+                                    var travelsid = t.getAttribute("data-travelsid")
+                                    var src = t.getAttribute("src")
+
+                                    if (src == ('../../static/img/Icon/xin.png')) {
+                                        t.setAttribute("src", "../static/img/Icon/xin2.png")
+                                        jiajian = 1
+                                    } else {
+                                        t.setAttribute("src", "../../static/img/Icon/xin.png")
+                                        jiajian = -1
+                                    }
+                                    html = $.ajax({
+                                        url: '/house/',
+                                        type: "POST",
+                                        data: {"travelsid": travelsid, "jiajian": jiajian, "type": "TravelsidCollect"}
+                                    })
+                                }
+                            </script>
+
+                            {#                        <div id="tab_3">#}
+                            {#                            {% for companions in companions_collection %}#}
+                            {#                                <div>#}
+                            {#                                #}
+                            {#                                </div>#}
+                            {#                            {% endfor %}#}
+                            {#                        </div>#}
+                        </div>
+                        <script src="../../static/js/jquery-1.7.2.min.js"></script>
+                        <script>
+
+                            $("#btn1").click(function () {
+                                    $("#btn1").css("background", "#f7f7f7");
+                                    $("#btn2,#btn3").css("background", "#ffdab9");
+                                    document.getElementById('title1').innerText = '景点收藏';
+                                    document.getElementById('count').innerText={{ count_scenicspot }};
+                                    document.getElementById("tab_1").style.display = "block";
+                                    document.getElementById("tab_2").style.display = "none";
+                                }
+                            );
+
+                            $("#btn2").click(function () {
+                                    $("#btn2").css("background", "#eee8cd");
+                                    $("#btn1,#btn3").css("background", "#c1cdc1");
+                                    document.getElementById('count').innerText={{ count_travels }};
+                                    document.getElementById('title1').innerText = '游记收藏';
+                                    document.getElementById("tab_1").style.display = "none";
+                                    document.getElementById("tab_2").style.display = "block";
+                                }
+                            );
+
+
+                            $("#btn3").click(function () {
+                                    $("#btn3").css("background", "pink");
+                                    $("#btn1,#btn2").css("background", "#eee8cd");
+                                    document.getElementById("tab_1").style.display = "none";
+                                    document.getElementById("tab_2").style.display = "none";
+                                    document.getElementById("tab_3").style.display = "block";
+                                }
+                            );
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /span9 -->
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

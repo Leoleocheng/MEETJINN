@@ -1,0 +1,16 @@
+
+#div2 {
+    position: absolute; /*设置为绝对定位*/
+    z-index: 999;
+    margin-top: -60px;
+}
+
+#tab1{
+    width: 90%;
+    border: dashed 1px #b1b1b1;
+    height: 50px;
+}
+#tab1 td{
+    width: 30%;
+    font-size: 1vw;
+}

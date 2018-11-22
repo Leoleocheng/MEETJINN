@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+#tabs {
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#tabs li {
+    float: left;
+
+}
+
+#tabs a {
+    position: relative;
+    border-bottom: white solid 3px;
+    padding: .7em 3.5em;
+    float: left;
+    text-decoration: none;
+    color: #444;
+}
+
+#tabs a:hover, #tabs a:hover::after, #tabs a:focus, #tabs a:focus::after {
+    border-bottom: #ff6600 solid 3px;
+    color: #ff6600;
+    background: #fff;
+}
+
+#tabs a:focus {
+    outline: 0;
+}
+
+#tabs #current a, #tabs #current a::after {
+    background: #fff;
+    z-index: 3;
+}
+
+/* ------------------------------------------------- */
+
+#content h2, #content h3, #content p {
+    margin: 0 0 15px 0;
+}
+
+/* ------------------------------------------------- */
+
+#about {
+    color: #999;
+}
+
+#about a {
+    color: #eee;
+}
+
+#content dd {
+    float: left;
+    width: 100px;
+}
+
+a, img {
+    border: 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3366cc;
+    text-decoration: underline;
+}
+
+#div33 {
+    width: 100%;
+    margin: 40px auto;
+    position: relative;
+}
+
+#div33 li {
+    list-style: none;
+}
+
+#div33 dl dt {
+    font-size: 14px;
+    color: #ff6600;
+    margin-top: 30px;
+    font-weight: 800;
+}
+
+#div33 dl dt, #div33 dl dd {
+    line-height: 22px;
+}
+
+/* tabbtn */
+
+.tabbtn {
+    height: 30px;
+}
+
+.tabbtn a:hover {
+    border-bottom: solid 2px #ff6600;
+    height: 27px;
+    line-height: 27px;
+    color: #ff6600;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.tabbtn li {
+    font-size: 28px;
+    width: 100px;
+    float: left;
+    position: relative;
+
+}
+
+.tabbtn li a {
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* tabcon */
+
+.tabcon {
+
+    position: relative; /*必要元素*/
+    overflow: hidden;
+}
+
+.tabcon .subbox {
+    position: absolute; /*必要元素*/
+    left: 0;
+    top: 0;
+}
+
+#div3311 div {
+    margin-top: 20px;
+}
+
+#citySelect {
+    width: 200px;
+    height: 38px;
+    background: white;
+    border-radius: 5px
+}
+
+
+#tabs{
+    font-size: 22px;
+}

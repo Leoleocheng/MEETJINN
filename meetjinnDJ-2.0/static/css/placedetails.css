@@ -1,0 +1,103 @@
+
+#ul1 li {
+    width: 200px;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    border-bottom:2px solid white;
+}
+
+#ul1 li:hover {
+    border-bottom: #ff6600 solid 2px;
+    color: #ff6600;
+}
+
+.click1{
+    border-bottom: #ff6600 solid 2px;
+    color: #ff6600;
+}
+
+.click2{
+    border-bottom: white solid 2px;
+    color: black;
+}
+
+
+
+#div222 h3 {
+    border-left: #ff6600 solid 3px;
+    width: 200px;
+    text-align: center;
+}
+
+#div222 img {
+    width: 80%;
+}
+
+#tab1 h1, h2, h3, h4, h5 {
+    color: #ff6600;
+}
+
+#tab1 img {
+    width: 90%
+}
+
+#tab1 td {
+
+}
+
+.round {
+
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#tab1 tr {
+    height: 70px;
+}
+
+#tab1 td {
+    font-size: 20px;
+    width: 30%;
+}
+
+.h23 {
+    color: black;
+}
+
+.tab3 ul li {
+    float: right;
+    list-style: none;
+    margin-left: 10px;
+}
+
+.tab3 h4 {
+    color: black;
+}
+
+#div222 a:link {
+    color: black;
+    text-decoration:none
+
+}
+
+
+#div222 a:visited {
+    color: black;
+    text-decoration:none
+}
+
+
+#div222 a:hover {
+    color: black;
+    text-decoration:none
+}
+
+
+#div222 a:active {
+    color: black;
+    text-decoration:none
+}

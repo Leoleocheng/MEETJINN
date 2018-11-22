@@ -1,0 +1,269 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>我的游记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../static/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="../../static/css/font-awesome.css" rel="stylesheet"/>
+    <link href="../../static/css/adminia.css" rel="stylesheet"/>
+    <link href="../../static/css/adminia-responsive.css" rel="stylesheet"/>
+    <link href="../../static/css/pages/plans.css" rel="stylesheet"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="../../static/css/个人中心.css" rel="stylesheet">
+</head>
+
+
+<style>
+
+    .a1 a {
+        display: block;
+        width: 100px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: #ff9e00;
+        position: absolute;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        margin-left: 5%;
+        margin-top: -15px;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .ydc-right-head {
+        display: flex;
+    }
+
+    li {
+        padding-left: 40px;
+    }
+
+    .myTabContent ul li {
+
+    }
+
+    .ydc-right-head-info {
+        display: flex;
+        height: 100px;
+        -webkit-flex: 1 1 200px;
+        -ms-flex: 1 1 200px;
+        flex: 2 2 200px;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 700;
+        background-color: #f4f4f4;
+        border-radius: 3px;
+    }
+
+    .ydc-right-head-info dl {
+        -webkit-flex: 1 1 0%;
+        -ms-flex: 1 1 0%;
+        flex: 1 1 0%
+    }
+</style>
+
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+
+    <div class="navbar-inner">
+        <a href="/homepage/"><img src="../../static/img/logo1.png" alt="" width="150px" style="float: left"></a>
+        <div class="container">
+            <a class="brand" href="/homepage/">
+                首页
+            </a>
+            <a class="brand" href="./">个人中心</a>
+            <div class="nav-collapse">
+            </div> <!-- /nav-collapse -->
+        </div> <!-- /container -->
+    </div> <!-- /navbar-inner -->
+</div>
+
+<div id="content" style="background: white">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="span3">
+
+                <div class="account-container">
+
+                    <div class="account-avatar">
+                        <img src="{{ user.user_img }}" alt="" class="thumbnail"/>
+                    </div> <!-- /account-avatar -->
+
+                    <div class="account-details">
+
+                        <span class="account-name">{{ user.user_name }}</span>
+
+                        {% if user.user_sex == 1 %}
+                            <span class="account-role">男</span>
+                        {% else %}
+                            <span class="account-role">女</span>
+                        {% endif %}
+
+                    </div> <!-- /account-details -->
+
+                </div> <!-- /account-container -->
+
+                <hr/>
+
+                <ul id="main-nav" class="nav nav-tabs nav-stacked">
+
+                    <li class="left-a">
+                        <a href="/house/">
+                            <i></i>
+                            我的收藏
+                        </a>
+                    </li>
+                    <li class="left-a active ">
+                        <a href="/plans/">
+                            <i></i>
+                            我的游记
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/myimg/">
+                            <i></i>
+                            图片
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/interlocution/">
+                            <i></i>
+                            我的问答
+                        </a>
+                    </li>
+
+                    <li class="left-a">
+                        <a href="/mate/">
+                            <i></i>
+                            我的结伴
+                        </a>
+                    </li>
+
+                    <li class="left-a">
+                        <a href="/install/">
+                            <i></i>
+                            设置
+                        </a>
+                    </li>
+                </ul>
+
+                <hr/>
+                <br/>
+
+            </div> <!-- /span3 -->
+            <div class="span9">
+                <h1 class="page-title">
+
+                    我的游记
+                </h1>
+                <div class="col-md-9 column">
+                    <div class="col-md-12 column">
+                        <div class="ydc-entered-box">
+                            <div class="ydc-content-right">
+                                <div class="ydc-right-head">
+                                    <div class="ydc-right-head-info">
+                                        <dl>
+                                            <a href="#">
+                                                <span style="font-size: 30px">{{ user.count }}</span>
+                                                <dt style="font-size: 18px;margin-top: 10px;color:black"
+                                                    class="divider">游记
+                                                </dt>
+                                            </a>
+                                        </dl>
+                                        <dl>
+                                            <a href="#">
+                                                <div class="a1">
+                                                    <a href="/wtn/" title="写游记"
+                                                       class="btn_write"><i></i>写游记</a>
+                                                </div>
+
+                                            </a>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="widget">
+
+                    <div class="widget-header" style="margin-top: 30px">
+                        <h3>我的游记</h3>
+
+                    </div> <!-- /widget-header -->
+
+                    <div class="widget-content">
+                        <div>
+                            {% for travels in travels_list %}
+                                <div id="{{ travels.travels_divid }}" style="display:flex;float: left;margin-top: 30px">
+                                    <div style="width: 500px;">
+                                        <div style="margin: auto;width: 400px"><a
+                                                href="/travelnotes/?data={{ travels.travels_id }}"><img
+                                                src="{{ travels.travels_img_url }}" style="width: 400px;"></a></div>
+                                    </div>
+                                    <div style="margin:0 auto auto 15px;width: 50%">
+                                        <div>
+                                            <a href="/travelnotes/?data={{ travels.travels_id }}">{{ travels.travels_title }}</a>
+                                        </div>
+                                        <div style="margin-top: 15px"><a
+                                                href="/travelnotes/?data={{ travels.travels_id }}"><span>{{ travels.shorttext }}</span></a>
+                                        </div>
+                                        <p></p>
+                                        <div style="text-align: right">
+                                            <button class="btn-primary" style="border-radius: 8px">
+                                                <a onclick="Travels(this)"
+                                                   data-travelsid="{{ travels.travels_id }}">
+                                                    <span style="color: white;font-size: 17px">删除游记</span>
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <script src="../../static/js/jquery-1.7.2.min.js"></script>
+                        <script>
+                            {#                            删除游记#}
+
+                            function Travels(t) {
+                                travelsid = t.getAttribute("data-travelsid");
+                                travelsdivid = "div-" + travelsid;
+                                r = confirm("你确定要删除此游记吗？");
+                                if (r == true) {
+                                    document.getElementById(travelsdivid).style.display = "none";
+                                    html = $.ajax({
+                                        url: '/plans/',
+                                        type: "POST",
+                                        data: {"travelsid": travelsid},
+                                    })
+                                }
+                            }
+                        </script>
+                    </div> <!-- /widget-content -->
+
+                </div> <!-- /widget -->
+
+            </div> <!-- /span9 -->
+        </div> <!-- /row -->
+
+    </div> <!-- /container -->
+</div> <!-- /content -->
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结伴详情</title>
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <link rel="stylesheet" href="../static/css/travelsdetails.css">
+    <link rel="stylesheet" href="../static/css/companionsdetails.css">
+    <script>
+        function isPoneAvailable(_this) {
+            var myreg = /^((\+?86)|(\(\+86\)))?1\d{10}$/;
+            if (!myreg.test($(_this).val())) {
+                $("#err1").fadeIn(100);
+            } else {
+                $("#err1").fadeOut(100)
+            }
+        }
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse" id="cla1">
+        <ul class="navbar-nav" style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<div>
+    <img src="../static/img/jieban1.jpg"
+         alt="" style="width: 100%;height: 100%">
+</div>
+
+<div id="div3">
+    <h3 align="content">{{ list.companions_title }}</h3>
+    <h4>{{ list.companions_people }}人已报名</h4>
+    <div class="btn-group btn-group-lg" style="margin-top: 20px">
+        <button type="button" class="btn btn-primary" id="a1"><img src="../static/img/Icon/baomin.png" alt=""
+                                                                   height="40px"
+        >{% if list.crux == '报名后可见' %}我要报名
+        {% else %}已报名
+        {% endif %}
+        </button>
+        {% if request.session.is_login %}
+            <button type="button" class="btn btn-primary" onclick="shoucang(this)">{% if list.collection == 1 %}<img
+                    src="../static/img/Icon/shoucang1.png" alt="" height="40px">收藏结伴{% else %}
+                <img src="../static/img/Icon/shoucang2.png" alt="" height="40px">已收藏{% endif %}</button>
+            <script>
+                function shoucang(_this) {
+                    b = _this.innerText;
+                    if (b == '收藏结伴') {
+                        _this.innerHTML = '<img src="../static/img/Icon/shoucang2.png" alt="" height="40px">已收藏';
+                        type = 1
+                    }
+                    else {
+                        _this.innerHTML = '<img src="../static/img/Icon/shoucang1.png" alt="" height="40px">收藏结伴';
+                        type = 2
+                    }
+                    data1 = $(this).text();
+                    companion ={{ list.companions_id }};
+                    html = $.ajax({
+                        url: "/companioncollection/",
+                        type: 'POST',
+                        data: {'type': type, 'companion': companion},
+                    });
+                }
+            </script>
+        {% endif %}
+    </div>
+    <script>
+        $(function () {
+            $('#a1').click(function () {
+                //根据a标签的href转换为id选择器，获取id元素所处的位置，并高度减50px（这里根据需要自由设置）
+                $('html,body').animate({scrollTop: ($("#1").offset().top - 50)}, 800);
+            });
+        });
+    </script>
+</div>
+<div class="container" style="clear: both">
+    <div class="row">
+        <div class="col-md-12" id="div41">
+            <table style="margin: 10px auto">
+                <tr>
+                    <td><img src="../static/img/Icon/shijian.png" width="25px" alt="">出发时间：<span
+                            class="maintext">{{ list.time1 }}</span></td>
+                    <td>
+                        <img src="../static/img/Icon/rili.png" width="25px" alt="">行程时间：<span
+                            class="maintext">{{ list.companions_time }}天</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="../static/img/Icon/dingwei.png" width="25px" alt="">目的地:<span
+                            class="maintext">{{ list1.city_name }}</span></td>
+                    <td><img src="../static/img/Icon/ren.png" width="25px" alt="">预期人数:<span
+                            class="maintext">{{ list.companions_people_expect }}人</span></td>
+                </tr>
+            </table>
+            <hr>
+            <div style="font-size: 20px;text-align: center"><img src="../static/img/Icon/phone.png" width="25px" alt="">联系方式:
+                <span style="color: #ee6600">{{ list.crux }}</span></div>
+            <hr>
+        </div>
+        <div class="col-md-8" id="div42">
+            <table>
+                <tr>
+                    <td><img src="{{ list.user_img }}" alt="" class="round_icon"></td>
+                    <td><span style="font-size: 25px;color: #ff6600">{{ list.user_name }}</span></td>
+                </tr>
+            </table>
+            <div>{{ list.companions_md }}</div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <h3>相关目的地</h3>
+            <img src="{{ list1.city_img_url }}" alt="" width="70%">
+            <a href="/region/?data={{ list1.city_id }}"><h5>{{ list1.city_name }}</h5></a>
+        </div>
+
+        <div class="col-md-12" id="1">
+            <hr>
+            {% if list.crux == '报名后可见' %}
+                {% if request.session.is_login %}
+                    <h3>我要报名</h3>
+                    <form action="/companionsotes/" method="post">
+                    <table id="tab1">
+                        <tr>
+                            <td>手机号：</td>
+                            <td><input type="text" class="form-control" name="phone" onchange="isPoneAvailable(this)">
+                                <div style="display: none;color: red;font-size: 15px;margin: 2px;height: 20px"
+                                     id="err1">无效的手机号!!!
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>性别：</td>
+                            <td>
+                                <div class="switch_box box_2">
+                                    女&nbsp;<input type="checkbox" class="switch_2" name="sex">&nbsp;&nbsp;男
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>备注：</td>
+                            <td>
+                                <input type="text" name="a" value="{{ a }}" style="display: none">
+                                <textarea class="form-control" rows="8" name="text"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="submit" class="btn btn-primary">提交报名</button>
+                            </td>
+                        </tr>
+                    </table>
+                {% else %}
+                    <a href="/register/" style="font-size: 20px;color: #ee6600">未登录，请登陆后报名。</a>
+                {% endif %}
+            </form>
+
+            {% else %}
+                已报名
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row clearfix" style="background:rgba(52,58,64,1);margin-top: 30px">
+    <div class="col-md-2 column">
+    </div>
+    <div class="col-md-8 column">
+        <div id="fool" style="width: 100%;text-align: center;height: 100px;color: #e2e3e5;">
+            <p style="margin-top: 20px">© 2018 meetjinn.com 京ICP备0000000号
+                <img src="http://images.mafengwo.net/images/footer/police_record.png"
+                     width="12" style="margin:0 2px 4px 0;">公网安备000000000号<span
+                        class="m_l_10">违法和不良信息举报电话: ---------- 举报邮箱 ----------</span></p>
+            <p>网络出版服务许可证：----------<span class="m_l_10">增值电信业务经营许可证：京00000000</span> 营业执照帮助中心<span
+                    class="m_l_10">觅景客服:</span><span
+                    class="highlight">4006-000-000</span>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+<div>
+    <a class="to-top" style="z-index: 999"><img src="../static/img/Icon/huidao.png" alt="" width="60px"></a>
+    <script>!function (o) {
+        "use strict";
+        o.fn.toTop = function (t) {
+            var i = this, e = o(window), s = o("html, body"),
+                n = o.extend({autohide: !0, offset: 420, speed: 500, position: !0, right: 15, bottom: 30}, t);
+            i.css({cursor: "pointer"}), n.autohide && i.css("display", "none"), n.position && i.css({
+                position: "fixed",
+                right: n.right,
+                bottom: n.bottom
+            }), i.click(function () {
+                s.animate({scrollTop: 0}, n.speed)
+            }), e.scroll(function () {
+                var o = e.scrollTop();
+                n.autohide && (o > n.offset ? i.fadeIn(n.speed) : i.fadeOut(n.speed))
+            })
+        }
+    }(jQuery);
+    $(function () {
+        $('.to-top').toTop();
+    });
+    </script>
+</div>
+</body>
+</html>

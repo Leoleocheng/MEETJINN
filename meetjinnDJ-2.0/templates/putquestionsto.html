@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提问</title>
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <link rel="stylesheet" href="../static/css/putquestions.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <style>
+        div {
+            border: 0 black solid;
+        }
+
+        #body_a > div > div > div {
+            height: auto;
+            margin: 5px;
+        }
+
+        .kuang {
+            width: 100%;
+            height: 55px;
+        }
+
+        #citySelect {
+            width: 100%;
+            height: 55px;
+            font-size: 20px;
+        }
+
+        .RadioStyle input {
+            display: none
+        }
+
+        .RadioStyle label {
+            border: 1px solid #CCC;
+            color: #666;
+            padding: 2px 10px 2px 5px;
+            line-height: 28px;
+            min-width: 80px;
+            text-align: center;
+            float: left;
+            margin: 2px;
+            border-radius: 4px
+        }
+
+        .RadioStyle input:checked + label {
+            background: url(../static/img/Icon/ico_checkon.svg) no-repeat right bottom;
+            border: 1px solid #00a4ff;
+            background-size: 21px 21px;
+            color: #00a4ff
+        }
+
+        .RadioStyle input:disabled + label {
+            opacity: 0.7;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse" id="cla1">
+        <ul class="navbar-nav" style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+<div class="container" id="body_a" style="height: 800px">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div style="margin-top: 10px">
+                <span><a href="" target="_self">问答</a></span>
+                <span>>我要提问</span>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-8 column">
+            <form action="/issues/" method="post">
+                <div style="margin-top: 20px;">
+                    <div style="margin: 10px auto 30px auto">
+                        <p><span class="biaoti" style="font-size: 20px">问题标题</span></p>
+                        <p><input class="kuang" type="text" placeholder="不超过50字" maxlength="50" name="title"></p>
+                    </div>
+                    <div style="margin: 10px auto 30px auto">
+                        <p><span class="neirong" style="font-size:20px">问题详情</span></p>
+                        <textarea class="kuang" type="text" placeholder="输入问题内容" maxlength="1000"
+                                  style="resize:none;height: 200px" name="text"></textarea>
+                    </div>
+                    <div>
+                        <p>选择地点</p>
+                        <p><input name=place class="cityinput" id="citySelect" type="text" value="苏州" maxlength="50">
+                        </p>
+                        <script src="../static/js/homepage.js"></script>
+                        <div style="">
+                            <p><span style="font-size: 20px">选择标签</span></p>
+                            <div class="RadioStyle">
+                                <div class="Block PaddingL" id="danxuan">
+                                    <input type="radio" name="Storage" id="model1" value="1"
+                                           onclick="if(this.c==1){this.c=0;this.checked=0}else this.c=1" c="0"/>
+                                    <label for="model1">美食</label>
+                                    <input type="radio" name="Storage" id="model2" value="2"
+                                           onclick="if(this.c==1){this.c=0;this.checked=0}else this.c=1" c="0"/>
+                                    <label for="model2">徒步</label>
+                                    <input type="radio" name="Storage" id="model3" value="3"
+                                           onclick="if(this.c==1){this.c=0;this.checked=0}else this.c=1" c="0"/>
+                                    <label for="model3">自驾</label>
+                                    <input type="radio" name="Storage" id="model4" value="4"
+                                           onclick="if(this.c==1){this.c=0;this.checked=0}else this.c=1" c="0"/>
+                                    <label for="model4">骑行</label>
+                                    <input type="radio" name="Storage" id="model5" value="5"
+                                           onclick="if(this.c==1){this.c=0;this.checked=0}else this.c=1" c="0"/>
+                                    <label for="model5">亲子</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin:100px auto;width: 60px;">
+                        <button type="submit" class="btn btn-default">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4 column">
+            <div>
+                <p><span style="font-size: 20px">提问的正确姿势</span></p>
+            </div>
+            <div>
+                <p><span style="color:#999;">问题要【具体】【真实】【诚恳】，问题较多，需全面阐述时，可以添加问题补充。
+                    结伴/交易/与旅行无关的提问将被删除。</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row clearfix" style="background:rgba(52,58,64,1)">
+    <div class="col-md-2 column">
+    </div>
+    <div class="col-md-8 column">
+        <div id="fool" style="width: 100%;text-align: center;height: 100px;color: #e2e3e5;">
+            <p style="margin-top: 20px">© 2018 meetjinn.com 京ICP备0000000号
+                <img src="http://images.mafengwo.net/images/footer/police_record.png"
+                     width="12" style="margin:0 2px 4px 0;">公网安备000000000号<span
+                        class="m_l_10">违法和不良信息举报电话: ---------- 举报邮箱 ----------</span></p>
+            <p>网络出版服务许可证：----------<span class="m_l_10">增值电信业务经营许可证：京00000000</span> 营业执照帮助中心<span
+                    class="m_l_10">觅景客服:</span><span
+                    class="highlight">4006-000-000</span>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+</body>
+</html>

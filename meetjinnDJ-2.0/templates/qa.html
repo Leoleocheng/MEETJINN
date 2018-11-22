@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <link rel="stylesheet" href="../static/css/questionandanswer.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>问答</title>
+
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+        $('#td1').click(function () {
+            data1 = $(demo).val();
+            html = $.ajax({
+                url: "/qa/",
+                type: 'POST',
+                data: {'data': data1},
+                success: function (html) {
+                    $("#ta1").html(html);
+                }
+            });
+        })
+
+    });
+
+    function ajax1(a) {
+        data1 = a;
+        try {
+            data2 = document.getElementById('demo').value;
+        }
+        catch (error) {
+            data2 = ''
+        }
+        html = $.ajax({
+            url: "/qa/",
+            type: 'POST',
+            data: {'type': a, 'data': data2},
+            success: function (html) {
+                $("#ta1").html(html);
+            }
+        });
+    }
+</script>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse" id="cla1">
+        <ul class="navbar-nav" style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown" style="background: rgb(0,104,183);border-radius: 5px">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<div class="container" style="width: 100%">
+    <div class="row">
+        <div class="col-md-1 col-1">
+        </div>
+        <div class="col-md-8 col-10" id="div22">
+            <table style="margin-bottom: 20px">
+                <tr>
+                    <td>
+                        <div class="btn-group" id="daohang">
+                            <button type="button" class="btn btn-default" style="width: 40%"><a href="/qa/">问答首页</a>
+                            </button>
+                            <button type="button" class="btn btn-default" style="width: 40%"><a
+                                    href="/companions/">结伴</a></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 400px">
+                        <input type="text" class="form-control" placeholder="请先搜索确认您的问题是否已被解决" id="demo"
+                               name="problem">
+                    </td>
+                    <td id=td1>
+                        <img src="../static/img/Icon/sousuo.png" alt="" style="margin-left: 20%">
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <div>
+                <div class="tab-menu tworow">
+                    <span id="thirdbg"></span>
+                    <ul id="hourlist">
+                        <li class="active" type="1" onclick="ajax1(1)">热门问题</li>
+                        <li type="2" onclick="ajax1(2)">最新问题</li>
+                    </ul>
+                </div>
+                <script src="../static/js/ku/jquery-3.3.1.min.js"></script>
+                <script src="../static/js/slide.js"></script>
+                <script>
+                    new Slideicon($("#hourlist"), {
+                        index: 0,
+                        cover: $("#thirdbg"),
+                        callback: function (data) {
+                            console.log(data)
+                        }
+                    });
+                </script>
+            </div>
+            <div style="margin-top: 20px" id="ta1">
+                {% for view in list %}
+                    <table style="width: 100%;margin-bottom: 10px">
+                        <tr>
+                            <td><a href="/qadetails/?data={{ view.problem_id }}"><h4>{{ view.problem_title }}</h4></a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div style="width: 50px;height: 220px">
+                                    <div style="width: 100%;border-radius:100%;overflow:hidden;"><img
+                                            src="{{ view.user_img }}" alt="" width="50px" height="50px">
+                                    </div>
+                                </div>
+                                <div style="width: 80%;height: 220px">
+                                    <h5 style="margin-bottom: 20px">{{ view.user_name }}</h5>
+                                    <div>
+                                        <p>{{ view.md1 }}</p>
+                                    </div>
+                                    <div style="clear: both;width: 100%;margin-top: 0">
+                                        <div style="float: right" id="divbiao">
+                                            <li>{{ view.time1 }}</li>
+                                            <li><a href="/region/?data={{ view.problem_place_id }}">{{ view.city_name }}</a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr>
+                            </td>
+                        </tr>
+                    </table>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <table id="ta2" cellspacing="10px" style=" border-collapse:separate; border-spacing:0 20px;">
+                <tr>
+                    <td>
+                        <a href="/issues/">
+                            <button type="button" class="btn btn-primary" id="but1">我要提问</button>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="http://files.g4.xmgc360.com/ss1.jpg" alt="" width="100%">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <hr style="border: 1px solid black">
+                        <h5>回答热门区域</h5>
+                        <ul id="ul2" style="margin: 0;padding: 0">
+                            {% for view in list2 %}
+                                <li>
+                                    <a href="/region/?data={{ view.city_id }}">{{ view.city_name }}({{ view.city_problem }})</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-12 column">
+    </div>
+</div>
+<hr>
+
+<div class="row clearfix" style="background:rgba(52,58,64,1);margin-bottom: 0">
+    <div class="col-md-2 column">
+    </div>
+    <div class="col-md-8 column">
+        <div id="fool" style="width: 100%;text-align: center;height: 130%;color: #e2e3e5;">
+            <p style="margin-top: 20px">© 2018 meetjinn.com 京ICP备0000000号
+                <img src="http://images.mafengwo.net/images/footer/police_record.png"
+                     width="12" style="margin:0 2px 4px 0;">公网安备000000000号<span
+                        class="m_l_10">违法和不良信息举报电话: ---------- 举报邮箱 ----------</span></p>
+            <p>网络出版服务许可证：----------<span class="m_l_10">增值电信业务经营许可证：京00000000</span> 营业执照帮助中心<span
+                    class="m_l_10">觅景客服:</span><span
+                    class="highlight">4006-000-000</span>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+</body>
+</html>

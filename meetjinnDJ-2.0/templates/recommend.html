@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>推荐</title>
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/img/recommend/css/base.css"/>
+</head>
+<body>
+<svg class="hidden">
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <title>arrow</title>
+        <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+    </symbol>
+    <symbol id="icon-drop" viewBox="0 0 24 24">
+        <title>drop</title>
+        <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/>
+        <path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+    </symbol>
+    <symbol id="icon-caret" viewBox="0 0 24 13">
+        <title>caret</title>
+        <path d="M23.646.328a.842.842 0 0 0-1.19 0l-10.459 10.48L1.517.328a.842.842 0 0 0-1.189 1.19L11.382 12.57c.164.164.369.246.595.246.205 0 .43-.082.594-.246L23.625 1.518a.824.824 0 0 0 .02-1.19z"/>
+    </symbol>
+</svg>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse" id="cla1">
+        <ul class="navbar-nav" style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item dropdown" style="background: rgb(0,104,183);border-radius: 5px">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<main>
+    <div class="slideshow" style="background: linear-gradient(45grad, #5afdff,#5a9aff)">
+        {% for view in list %}
+            <div class="slide">
+                <div class="preview">
+                    <div class="preview__img-wrap">
+                        <div class="preview__img"
+                             style="background-image: url({{ view.scenicspot_img_url }});
+                                     filter:alpha(opacity=60); /*支持 IE 浏览器*/
+                                     -moz-opacity:0.60; /*支持 FireFox 浏览器*/
+                                     opacity:0.60; /*支持 Chrome, Opera, Safari 等浏览器*/
+                                     "></div>
+                        <div class="preview__img-reveal"></div>
+                    </div>
+                    <h3 class="preview__title">{{ view.scenicspot_name }}概述</h3>
+                    <div class="preview__content">
+                        <p>{{ view.title }}</p>
+                    </div>
+                </div>
+                <div class="slide__img-wrap">
+                    <div class="slide__img" style="background-image: url({{ view.scenicspot_img_url }});"></div>
+                    <div class="slide__img-reveal"></div>
+                </div>
+                <span class="slide__number">{{ view.placeofname }}</span>
+                <h3 class="slide__title">{{ view.scenicspot_name }}</h3>
+            </div>
+        {% endfor %}
+        <nav class="slidenav">
+            <button class="slidenav__item slidenav__item--prev">Previous</button>
+            <button class="slidenav__item slidenav__item--next">Next</button>
+            <button class="slidenav__preview">
+                <svg class="icon icon--caret">
+                    <use xlink:href="#icon-caret"></use>
+                </svg>
+            </button>
+        </nav>
+    </div>
+</main>
+<script src="../static/img/recommend/js/imagesloaded.pkgd.min.js"></script>
+<script src="../static/img/recommend/js/TweenMax.min.js"></script>
+<script src="../static/img/recommend/js/demo.js"></script>
+</body>
+</html>

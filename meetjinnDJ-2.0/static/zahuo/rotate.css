@@ -1,0 +1,86 @@
+#siri .he {
+    width: 100px;
+    height: 100px;
+    border: 8px dashed #272636;
+    border-radius: 70px;
+    animation: namemf 3s linear infinite;
+    -webkit-animation: namemf 3s linear infinite;
+    -ms-animation: namemf 3s linear infinite;
+}
+
+#tishi .he1{
+
+}
+
+@keyframes namemf {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes namemf {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes namemf {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#siri {
+    background-image: url("../img/Icon/logo.png");
+    background-size: 100% 100%;
+    position: fixed;
+    border-radius: 50%;
+    left: auto;
+    right: 100px;
+    bottom:30px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    z-index: 999;
+}
+
+#tishi{
+    position: fixed;
+    left: auto;
+    right: 250px;
+    bottom:135px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    z-index: 999;
+}
+
+#sikao{
+    position: fixed;
+    left: auto;
+    right: 280px;
+    bottom:185px;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    z-index: 999;
+}
+
+#tishi1{
+    position: fixed;
+    left: auto;
+    right: 130px;
+    bottom:270px;
+    height: 100px;
+    text-align: center;
+    z-index: 999;
+}

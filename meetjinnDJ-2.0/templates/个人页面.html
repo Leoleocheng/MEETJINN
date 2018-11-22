@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <script src="../static/js/personalcenter.js"></script>
+    <style>
+        #neirong>div>div{
+            margin: 0 auto;width: 1200px;
+        }
+        {#div{#}
+        {#    border: 1px black solid;#}
+        {#}#}
+    </style>
+
+
+    <link rel="stylesheet" type="text/css" href="../static/css/personalcenter/tabs.css" media="all" />
+    <style type="text/css">
+        *{ margin:0; padding:0; list-style:none; }
+        body { font:14px/1.8 "Microsoft Yahei"; }
+        .demo { width:1000px; margin:20px auto 50px; }
+        .demo h1 { font-size:28px; font-weight:normal; margin-bottom:50px; }
+        .tips { color:#999; font-size:12px; margin:50px 0 20px; }
+
+        .tab-content { background-color:#f7f7f7; padding:10px; }
+        .tab-content h4, .accordion-content h4 { margin-bottom:5px; }
+        .tab-content p, .accordion-content p { margin-bottom:10px; }
+
+        @media only screen and ( max-width:1000px ){
+            body { margin:0 20px;}
+            .demo { width:100%; }
+        }
+    </style>
+
+    <script type="text/javascript" src="../static/js/personalcenter/tabs.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tabs').respTabs();
+        });
+    </script>
+
+
+
+
+    {#    <style>#}
+    {#        div {#}
+    {#            border: 1px black solid;#}
+    {#        }#}
+    {#    </style>#}
+
+
+</head>
+
+
+
+
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="col-md-1 column">
+        <img src="../static/img/logo1.png" alt="">
+    </div>
+    <div class="col-md-11 column" id="cla1">
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/strategy/">旅游攻略</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signin/">登录</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div class="demo" style="width: 100%;margin: 0">
+
+
+    <div class="tabs" style="width:100%;margin: 0">
+        <div style="text-align: center">
+            <ul class="tabs-list">
+                <li class="active"><a href="javascript:;">个人中心</a></li>
+                <li><a href="javascript:;">旅游收藏</a></li>
+                <li><a href="javascript:;">我的游记</a></li>
+                <li><a href="javascript:;">我的问答</a></li>
+                <li><a href="javascript:;">我的结伴</a></li>
+                <li><a href="javascript:;">设置</a></li>
+                <li><a href="javascript:;">多层</a></li>
+            </ul>
+        </div>
+
+
+        <div id="neirong" class="tabs-container" style="border:1px black solid;">
+            <div class="tab-content" style="display:block;">
+                <div>
+                    <div class="row clearfix">
+                        <div class="col-md-4 column">
+                            <div style="background-color: white;margin: 0 auto auto 20px;border: 1px black solid">
+                                <div id="photo" style="margin: 20px auto;width: 100px;height: 100px">
+                                    <img src="../static/img/p1.jpg" style="border-radius: 100%;
+                            margin: 0;width: 100px;height:100px">
+                                </div>
+                                <div id="user-name" style="margin: auto">
+                                    <h3 style="text-align:center;">希斯莱杰</h3>  {# 昵称 #}
+                                </div>
+                                <div id="follow-fans" style="width: 100%;">
+                                    <div id="follow" style="width: 100%;"><p style="text-align:center;">关注：0</p></div>
+                                    <div id="fans" style="width: 100%;"><p style="text-align:center;">粉丝：9999</p></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 column" style="display: flex">
+                            <div style="display: flex;float: left;width: 90%;margin: 20px auto;height: 100px;background-color: white;">
+                                <div style="width: 33%">
+                                    <div style="margin: auto;width: 80px;height: 90px;text-align:center">
+                                        <a href="">
+                                            <img src="../static/img/xie.png" style="margin: 0 auto">
+                                            <p style="text-align: center">写游记</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div style="width: 33%">
+                                    <div style="margin: auto;width: 80px;height: 90px;text-align:center">
+                                        <a href="">
+                                            <img src="../static/img/wen.png" align="center">
+                                            <p style="text-align: center">问达人</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div style="width: 33%">
+                                    <div style="margin: auto;width: 80px;height: 90px;text-align:center">
+                                        <a href="">
+                                            <img src="../static/img/ban.png" style="margin: auto">
+                                            <p style="text-align: center">发布结伴</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div>
+                    <div class="row clearfix">
+                        <div class="col-md-4 column" style="background-color: white">
+                            左
+                        </div>
+                        <div class="col-md-8 column">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div>
+                    3
+                </div>
+            </div>
+            <div class="tab-content">
+                <div>
+                    4
+                </div>
+            </div>
+            <div class="tab-content">
+                <div>
+                    5
+                </div>
+            </div>
+            <div class="tab-content">
+                <div>
+                    6
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tabs">
+                    <ul class="tabs-list">
+                        <li class="active"><a href="javascript:;">第二层选项卡 #1</a></li>
+                        <li><a href="javascript:;">第二层选项卡 #2</a></li>
+                        <li><a href="javascript:;">第二层选项卡 #3</a></li>
+                    </ul>
+                    <div class="tabs-container">
+                        <div class="tab-content" style="display:block;">
+                            <h4>第一个 Tab 内容</h4>
+                            <p>响应式Web设计(Responsive Web design)的理念是：集中创建页面的图片排版大小，可以智能地根据用户行为以及使用的设备环境（系统平台、屏幕尺寸、屏幕定向等）进行相对应的布局。</p>
+                            <p>如今客户不仅仅使用iPhone和笔记本，而且使用iMac的27英寸显示器，10英寸的Kindle和很多平板设备。这些设备可能会使用不同的浏览器，并且每种表格因素和浏览器的组合都可能导致不同的页面渲染。并且这些行为可能在每个版本上都不太一样。</p>
+                        </div>
+                        <div class="tab-content">
+                            <h4>第二个 Tab</h4>
+                            <p>响应式Web设计(Responsive Web design)的理念是：页面的设计与开发应当根据用户行为以及设备环境(系统平台、屏幕尺寸、屏幕定向等)进行相应的响应和调整。具体的实践方式由多方面组成，包括弹性网格和布局、图片、CSS media query的使用等。</p>
+                            <p>响应式网页设计就是一个网站能够兼容多个终端——而不是为每个终端做一个特定的版本。</p>
+                        </div>
+                        <div class="tab-content">
+                            <h4>第三个 Tab 内容</h4>
+                            <p>最近的项目用到TAB效果的地方较多，于是自己稍微封装了下，写成了jQuery插件，方便以后使用，顺便重温下jQuery插件的实现机制。在写插件之前对常见的TAB效果做了下总结，大体上也就那几种效果。插件力求简单易用，只要能实现常见的功能即可。</p>
+                            <p>在写插件之前对常见的TAB效果做了下总结，大体上也就那几种效果。插件力求简单易用，只要能实现常见的功能即可。</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- E second tabs -->
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>

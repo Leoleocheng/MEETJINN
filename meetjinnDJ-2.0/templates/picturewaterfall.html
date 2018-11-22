@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>图片</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
+
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../static/css/waterfall/animate.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="../static/css/waterfall/magnific-popup.css">
+    <!-- Salvattore -->
+    <link rel="stylesheet" href="../static/css/waterfall/salvattore.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="../static/css/waterfall/style.css">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <!-- Modernizr JS -->
+    <script src="../static/js/waterfall/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="../static/js/瀑布图片/respond.min.js"></script>
+	<![endif]-->
+
+    <style>
+        .floathand:hover {
+            cursor: pointer
+        }
+
+        nav{
+            font-size:16px
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse" id="cla1">
+        <ul class="navbar-nav" style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center;font-size: 16px">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center;font-size: 16px">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<div id="fh5co-main">
+    <div class="container">
+
+        <div class="row">
+
+            <div id="fh5co-board" data-columns>
+                {% for img in imglist %}
+
+
+
+                    <div class="item">
+                        <div class="animate-box">
+                            <a href="{{ img.img_url }}" class="image-popup fh5co-board-img"
+                               title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img
+                                    src="{{ img.img_url }}" alt="Free HTML5 Bootstrap template"></a>
+                        </div>
+                        <div>
+                            <div style="text-align: left">
+                                收藏<img style="width: 20px;" class="floathand" data-img-id="{{ img.img_id }}"
+                                       onclick="collect(this)" src="{{ img.collect_icon_src }}"><span
+                                    id="{{ img.collect_icon_id }}">{{ img.img_collection }}</span>
+                            </div>
+                            <div style="display: flex">
+                                <div><img src="{{ img.user_img }}" style="border-radius: 50%;width: 50px"></div>
+                                <div>{{ img.user_name }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function collect(t) {
+        var imgid = t.getAttribute("data-img-id")
+        var src = t.getAttribute("src")
+        var collectnumber = parseInt(document.getElementById("icon-" + imgid).innerHTML)
+        if (src == ('../static/img/Icon/xin.png')) {
+            t.setAttribute("src", "../static/img/Icon/xin2.png")
+            document.getElementById("icon-" + imgid).innerHTML = collectnumber + 1
+            jiajian = 1
+        } else {
+            t.setAttribute("src", "../static/img/Icon/xin.png")
+            document.getElementById("icon-" + imgid).innerHTML = collectnumber - 1
+            jiajian = -1
+        }
+        html = $.ajax({
+            url: '/soutu/',
+            type: "POST",
+            data: {"imgid": imgid, "jiajian": jiajian}
+        })
+    }
+</script>
+
+
+<!-- jQuery http://www.jq22.com/jquery/jquery-1.10.2.js-->
+<script src="../static/js/ku/jquery-3.3.1.min.js"></script>
+<!-- jQuery Easing -->
+<script src="../static/js/waterfall/jquery.easing.1.3.js"></script>
+<!-- Bootstrap http://www.jq22.com/jquery/bootstrap-3.3.4.js-->
+<script src="../static/js/ku/bootstrap.js"></script>
+<!-- Waypoints -->
+<script src="../static/js/waterfall/jquery.waypoints.min.js"></script>
+<!-- Magnific Popup -->
+<script src="../static/js/waterfall/jquery.magnific-popup.min.js"></script>
+<!-- Salvattore -->
+<script src="../static/js/waterfall/salvattore.min.js"></script>
+<!-- Main JS -->
+<script src="../static/js/waterfall/main.js"></script>
+
+
+</body>
+</html>

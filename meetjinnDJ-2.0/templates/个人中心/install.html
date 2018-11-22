@@ -1,0 +1,364 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>设置</title>
+    <script src="../../static/js/ku/jquery-3.3.1.min.js"></script>
+    <script src="../../static/js/ku/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../static/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="../../static/css/font-awesome.css" rel="stylesheet"/>
+    <link href="../../static/css/adminia.css" rel="stylesheet"/>
+    <link href="../../static/css/adminia-responsive.css" rel="stylesheet"/>
+    <link href="../../static/css/pages/dashboard.css" rel="stylesheet"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link href="../../static/css/个人中心.css" rel="stylesheet">
+
+    <style>
+        a:link, a:visited {
+            text-decoration: none; /*超链接无下划线*/
+        }
+
+        a:hover {
+            text-decoration: none; /*鼠标放上去有下划线*/
+        }
+
+        .tab1-col1 {
+            text-align: right;
+        }
+    </style>
+
+
+    {#    单选框#}
+    <style type="text/css">
+        body {
+            font: 14px/150% microsoft yahei, tahoma;
+        }
+
+        .clear {
+            clear: both
+        }
+
+        .RadioStyle input {
+            display: none
+        }
+
+        .RadioStyle label {
+            border: 1px solid #CCC;
+            color: #666;
+            padding: 2px 10px 2px 5px;
+            line-height: 28px;
+            min-width: 80px;
+            text-align: center;
+            float: left;
+            margin: 2px;
+            border-radius: 4px
+        }
+
+        .RadioStyle input:checked + label {
+            background: url(../../static/img/Icon/ico_checkon.svg) no-repeat right bottom;
+            border: 1px solid #00a4ff;
+            background-size: 21px 21px;
+            color: #00a4ff
+        }
+
+        .RadioStyle input:disabled + label {
+            opacity: 0.7;
+        }
+
+        #tab1 tr {
+            height: 60px;
+        }
+
+        #tab1 input {
+            height: 30px;
+        }
+    </style>
+
+
+    <script src="../../static/js/personalcenter.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/personalcenter/tabs.css" media="all"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            font: 14px/1.8 "Microsoft Yahei";
+        }
+
+        .demo {
+            width: 1000px;
+            margin: 20px auto 50px;
+        }
+
+        .demo h1 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 50px;
+        }
+
+        .tips {
+            color: #999;
+            font-size: 12px;
+            margin: 50px 0 20px;
+        }
+
+        .tab-content {
+            background-color: #f7f7f7;
+            padding: 10px;
+        }
+
+        .tab-content h4, .accordion-content h4 {
+            margin-bottom: 5px;
+        }
+
+        .tab-content p, .accordion-content p {
+            margin-bottom: 10px;
+        }
+
+        @media only screen and ( max-width: 1000px ) {
+            body {
+                margin: 0 20px;
+            }
+
+            .demo {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script type="text/javascript" src="../../static/js/personalcenter/tabs.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.tabs').respTabs();
+        });
+    </script>
+</head>
+<body>
+
+
+<div class="navbar navbar-fixed-top">
+
+    <div class="navbar-inner">
+        <a href="/homepage/"><img src="../../static/img/logo1.png" alt="" width="150px" style="float: left"></a>
+        <div class="container">
+            <a class="brand" href="/homepage/">
+                首页
+            </a>
+            <a class="brand" href="./">个人中心</a>
+            <div class="nav-collapse">
+            </div> <!-- /nav-collapse -->
+        </div> <!-- /container -->
+    </div> <!-- /navbar-inner -->
+</div>
+<div id="content" style="background: #FFFFFF">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="span3">
+
+                <div class="account-container">
+                    <div class="account-avatar">
+                        <img src="{{ user.user_img }}" class="thumbnail"/>
+                    </div> <!-- /account-avatar -->
+
+                    <div class="account-details">
+                        <span class="account-name">{{ user.user_name }}</span>
+                        {% if user.user_sex == 1 %}
+                            <span class="account-role">男</span>
+                        {% else %}
+                            <span class="account-role">女</span>
+                        {% endif %}
+
+                    </div> <!-- /account-details -->
+
+                </div> <!-- /account-container -->
+                <hr/>
+                <ul id="main-nav" class="nav nav-tabs nav-stacked">
+
+                    <li class="left-a">
+                        <a href="/house/">
+                            <i></i>
+                            我的收藏
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/plans/">
+                            <i></i>
+                            我的游记
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/myimg/">
+                            <i></i>
+                            图片
+                        </a>
+                    </li>
+                    <li class="left-a">
+                        <a href="/interlocution/">
+                            <i></i>
+                            我的问答
+                        </a>
+                    </li>
+
+                    <li class="left-a">
+                        <a href="/mate/">
+                            <i></i>
+                            我的结伴
+                        </a>
+                    </li>
+
+
+                    <li class="left-a active">
+                        <a href="/install/">
+                            <i></i>
+                            设置
+                        </a>
+                    </li>
+                </ul>
+                <hr/>
+                <br/>
+            </div> <!-- /span3 -->
+            <div class="span9">
+                <h1 class="page-title">
+
+                    设置
+                </h1>
+
+
+                <div class="widget">
+                    <div class="widget-header">
+
+                        <h3>个人资料</h3>
+                    </div> <!-- /widget-header -->
+                    <div class="widget-content" style="background: #c1cdc1">
+                        <div class="tabs" style="width:100%;margin: 0">
+                            <div>
+                                <div style="text-align: center">
+                                    <ul class="tabs-list">
+                                        <li class="active"><a href="javascript:;">基本信息</a></li>
+                                        <li><a href="javascript:;">我的头像</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="tab-content" style="display:block;height: 400px;width: 98%">
+                                    <form action="//" id="form1">
+                                        <table style="margin: 20px auto auto auto" id="tab1">
+                                            <tr>
+                                                <td class="tab1-col1">昵称：</td>
+                                                <td><input value="{{ user.user_name }}"
+                                                           class="input-group-prepend" name="user_name">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tab1-col1">性别：</td>
+                                                <td>
+
+                                                    <div class="RadioStyle">
+                                                        <div class="Block PaddingL" id="danxuan">
+                                                            <input type="radio" name="Storage" id="model1" value="1"
+                                                                    {% if user.user_sex == 1 %}
+                                                                   checked="checked"
+                                                                    {% endif %}/>
+                                                            <label for="model1">男</label>
+                                                            <input type="radio" name="Storage" id="model2" value="0"
+                                                                    {% if user.user_sex == 0 %}
+                                                                   checked="checked"
+                                                                    {% endif %}/>
+                                                            <label for="model2">女</label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tab1-col1">出生日期：</td>
+                                                <td><input value="{{ user.user_birthday }}" name="birthday">
+                                                    <input value="1" name="type" style="display: none"></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <button onclick="login()" type="button" class="btn btn-info">保存信息
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </form>
+                                </div>
+                                <script>
+                                    function login() {
+                                        $.ajax({
+                                            //几个参数需要注意一下
+                                            type: "POST",//方法类型
+                                            dataType: "json",//预期服务器返回的数据类型
+                                            url: "/install/",//url
+                                            data: $('#form1').serialize(),
+                                            success: function (result) {
+                                                alert("保存成功");
+                                            },
+                                            error: function () {
+                                                alert("服务器异常请重试！");
+                                            }
+                                        });
+                                    }
+                                </script>
+
+
+                                <div class="tab-content"
+                                     style="height: 400px;text-align: center;width: 98%;display: none">
+                                        <p>
+                                            <span style="font-size: 20px;color: #656565">我的头像</span>
+                                            <img src="{{ user.user_img }}" class="thumbnail" width="100px"
+                                                 style="margin: 0 auto"/>
+                                            <input name="type" value="2" style="display: none">
+                                        </p>
+                                        <p>修改头像:<input type="file" name="img" id="img1"></p>
+                                        <button onclick="login1()" type="button" class="btn btn-info">保存信息
+                                        </button>
+                                </div>
+                                <script>
+                                    function login1() {
+                                        var form = new FormData();
+                                        file1=document.getElementById("img1");
+                                        img=file1.files[0];
+                                        form.append("img",img);
+                                        form.append("type",2);
+                                        $.ajax({
+                                            //几个参数需要注意一下
+                                            type: "POST",//方法类型
+                                            url: "/install/",//url
+                                            processData : false,
+                                            contentType : false,
+                                            async:false,
+                                            data: form,
+                                            success: function (result) {
+                                                alert("保存成功");
+                                            },
+                                            error: function () {
+                                                alert("服务器异常请重试！");
+                                            }
+                                        });
+                                    }
+                                </script>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /span9 -->
+    </div> <!-- /row -->
+</div> <!-- /container -->
+</body>
+</html>
+

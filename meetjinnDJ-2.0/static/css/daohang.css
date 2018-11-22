@@ -1,0 +1,20 @@
+
+#cla1 ul li {
+    width: 120px;
+    float: right;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    float: none;
+}
+
+nav div ul{
+    text-align: center;
+    font-size: 18px;
+}
+
+

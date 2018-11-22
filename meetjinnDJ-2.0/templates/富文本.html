@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/ku/fuwenbenboots.css" rel="stylesheet">
+    <script src="../static/js/ku/fuwenbenjq.js"></script>
+    <script src="../static/js/ku/fuwenbenboot.js"></script>
+    <link href="../static/jq22summernote-develop847420160420/summernote-develop20160420/summernote.css"
+          rel="stylesheet">
+    <script src="../static/jq22summernote-develop847420160420/summernote-develop20160420/summernote.js"></script>
+</head>
+<body>
+{% block fuwenben %}
+<div id="summernote"></div>
+            <input type="text" style="display: none" id="html" name="html">
+
+        <script>
+            $('#summernote').summernote({
+                lang: 'zh-CN',
+                Height: 600,
+                placeholder: '请在此写游记...',
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style1', ['style']],
+                    ['style', [, 'bold', 'italic', 'underline', 'strikethrough']],
+                    ['para', ['ul', 'ol',]],
+                    ['insert', ['link', 'picture',]],
+                    ["misc", ['fullscreen', 'undo', 'redo']]
+                ],
+                callbacks: {
+                    onImageUpload: function (files) {
+                        var imageData = new FormData();
+                        imageData.append("imageData", files[0]);
+                        $.ajax({
+                            data: imageData,
+                            type: "POST",
+                            url: "/ceshi/",
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            success: function (result) {
+                                var imgNode = document.createElement("img");
+                                imgNode.src = result;
+                                $('#summernote').summernote('insertNode', imgNode);
+                            },
+                            error: function () {
+                                alert("上传图片失败");
+                            }
+                        });
+                    }
+                }
+            });
+        </script>
+
+{% endblock %}
+</body>
+</html>

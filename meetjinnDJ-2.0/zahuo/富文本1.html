@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Summernote</title>
+    <link href="../static/css/ku/fuwenbenboots.css" rel="stylesheet">
+    <script src="../static/js/ku/fuwenbenjq.js"></script>
+    <script src="../static/js/ku/fuwenbenboot.js"></script>
+    <link href="../static/jq22summernote-develop847420160420/summernote-develop20160420/summernote.css"
+          rel="stylesheet">
+    <script src="../static/jq22summernote-develop847420160420/summernote-develop20160420/summernote.js"></script>
+</head>
+<body>
+<div id="summernote"></div>
+
+<script>
+    $('#summernote').summernote({
+        lang: 'zh-CN',
+        Height: 400,
+        placeholder: '请在此写游记...',
+
+        callbacks: {
+            onImageUpload: function (files) {
+                var imageData = new FormData();
+                imageData.append("imageData", files[0]);
+                $.ajax({
+                    data: imageData,
+                    type: "POST",
+                    url: "/ceshi/",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (result) {
+                        var imgNode = document.createElement("img");
+                        imgNode.src = result;
+                        $('#summernote').summernote('insertNode', imgNode);
+                    },
+                    error: function () {
+                        alert("上传图片失败");
+                    }
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

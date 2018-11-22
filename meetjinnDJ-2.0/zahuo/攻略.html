@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>攻略</title>
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+</head>
+{## 第一部分#}
+<style>
+    #h0 ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 130px; /* Width of Menu Items */
+        border-bottom: 1px solid #ccc;
+    {#height: 20px;#}{#font: normal 11px verdana;#} font-size: 120%;
+    }
+
+    #h0 ul li {
+        position: relative;
+    }
+
+    #h0 li ul {
+        position: absolute;
+        left: 130px; /* Set 1px less than menu width */
+        top: 0;
+        display: none;
+    }
+
+    {##}
+    {#    /* Styles for Menu Items */#}
+    #h0 ul li a {
+        display: block;
+        text-decoration: none;
+        color: #777;
+        background: #fff; /* IE6 Bug */
+        padding: 5px;
+        border: 1px solid #ccc;
+        text-align: center;
+        border-bottom: 1px solid;
+    }
+
+    {##}
+    {#    /* End */#}
+    {##}
+    #h0 ul li a:hover {
+        color: grey;
+        background: #f9f9f9;
+        text-decoration: none;
+    }
+
+    {##}
+    {#    /* Hover Styles */#}
+    {##}
+    #h0 li ul li a {
+        padding: 2px;
+    }
+
+    {##}
+    {#    /* Sub Menu Styles */#}
+    {##}
+    #h0 li:hover ul, li.over ul {
+        display: block;
+    }
+
+    #h0 mu {
+        float: left;
+    }</style>
+{#第二部分#}
+<style>
+    #bb {
+        text-align: center;
+    }
+
+    .tab {
+        height: 23px;
+        margin-left: 65%;
+    }
+
+    .tab ul {
+        list-style: none;
+        margin-top: -10px;
+    }
+
+    .tab li {
+    {#border: 1px solid #ccc;#} background: #eee;
+        cursor: pointer;
+        display: block;
+        float: left;
+        text-align: center;
+        text-decoration: none;
+        width: 100px;
+        font-size: small;
+        height: 21px;
+    {#line-height: 21px;#} margin: 0 2px;
+    {#    position: relative;#}{#    top: 1px;#}{#z-index: 9;#}{#    margin-left: 60%;#}
+    }
+
+    .tab li:hover {
+        text-decoration: none;
+        background-color: #007bff;
+    }
+
+    .tab li.curr {
+        background: #fff;
+        border-bottom-color: #fff;
+        cursor: default;
+        font-weight: bold;
+    }
+
+    .cc {
+    {#border: 1px solid #ccc;#} padding: 10px;
+    }
+
+    .cd me {
+        float: left
+    }
+
+    #aa mu {
+        float: left;
+    }
+
+    #bb mu {
+        float: left;
+    }
+
+    #b {
+        background-color: white;
+        width: 100%;
+        height: 25px;
+        text-align: center;
+        font-size: smaller;
+        color: grey;
+    }
+
+    h5 a:link {
+        color: black;
+        text-decoration: none;
+    }
+
+    h5 a:hover {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    #beijing {
+        margin-top: 20px;
+    }
+
+    #beijing ee {
+        float: left;
+    }
+
+    #ff div {
+        float: left;
+    }
+</style>
+<script>
+    function setTab(name, cursel, n) {
+        for (i = 1; i <= n; i++) {
+            var menu = document.getElementById(name + i);
+            var con = document.getElementById("con_" + name + "_" + i);
+            menu.className = i == cursel ? "curr" : "";
+            con.style.display = i == cursel ? "block" : "none";
+        }
+    }
+</script>
+
+</body>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="col-md-1 column">
+        <img src="../static/img/logo1.png" alt="">
+    </div>
+    <div class="col-md-11 column" id="cla1">
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/strategy/">旅游攻略</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signin/">登录</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+<div class="row clearfix">
+    <div class="col-md-2 column">
+    </div>
+    <div id="h0" class="col-md-8 column">
+        <mu class="col-md-4 column">
+            <ul style="margin-top: 10px;">
+                <li><a href="#">冬季热门国内游</a>
+                    <ul>
+                        <li><a href="#">1.漠河</a></li>
+                        <li><a href="#">2.哈尔冰</a></li>
+                        <li><a href="#">3.壶口瀑布</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">冬季热门国际游</a>
+                    <ul>
+                        <li><a href="#">1.北海道</a></li>
+                        <li><a href="#">2.冰岛</a></li>
+                        <li><a href="#">3.澳大利亚</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">热门推荐</a>
+                </li>
+            </ul>
+            <p style="margin-top: 10px;"><a href="#">相关目的地搜索</a></p>
+        </mu>
+        <mu class="col-md-8 column">
+            <p style="margin-top: 10px;margin-left: 10px;"><img src="../static/img/gonglve.jpg" width="80% "
+                                                                height="300px"></p>
+        </mu>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+<div class="row clearfix" style="background-color: #ebebeb">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+        <h3 style="margin-left: 10px;;margin-top:10px;">目的地推荐</h3>
+        <div class="tab">
+            <ul>
+                <li id="c1" onmousemove="setTab('c',1,4)" class="curr">一叶知秋</li>
+                <li id="c2" onmousemove="setTab('c',2,4)">与雪山共舞</li>
+                <li id="c3" onmousemove="setTab('c',3,4)">疑是银河落九天</li>
+            </ul>
+        </div>
+        <div id="con_c_1" class="cd">
+            <me class="col-md-5">
+                <a href="#" id="pie">
+                    <div style="width: 100%;height: 315px;margin-top:25px;background-image: url(../static/img/daocheng.jpg);padding-top: 280px">
+                        <p style="color: white;text-align: center;;font-size:110%"> " 神的后花园"</p></div>
+                </a>
+                <div id="b">
+                    北疆之秋，我的诗和远方
+                </div>
+            </me>
+            <me class="col-md-7">
+                <div id="aa">
+                    <mu class="col-md-4">
+                        <a href="#">
+                            <div id="pie"
+                                 style="width: 100%;height: 130px;margin-top: 25px;padding-top: 100px;background-image: url(../static/img/daocheng.jpg)">
+                                <p style="color: white;text-align: center;font-size: 110%">和浪漫有关的地方</p></div>
+                        </a>
+                        <div id="b">
+                            体味北海道秋日慢生活
+                        </div>
+                    </mu>
+                    <mu class="col-md-4">
+                        <a href="#">
+                            <div id="pie"
+                                 style="width: 100%;height: 130px;margin-top: 25px;padding-top: 100px;background-image: url(../static/img/daocheng.jpg)">
+                                <p style="color: white;text-align: center;font-size:110%">一曲鸿雁，一眼草原</p></div>
+                        </a>
+                        <div id="b">
+                            自由行走在承德
+                        </div>
+                    </mu>
+                    <mu class="col-md-4">
+                        <a href="#">
+                            <div id="pie"
+                                 style="width: 100%;height: 130px;margin-top: 25px;padding-top: 100px;background-image: url(../static/img/daocheng.jpg)">
+                                <p style="color: white;text-align: center;;font-size:110%"> 金黄的季节，秋意最浓</p></div>
+                        </a>
+                        <div id="b">
+                            这个秋天我从阿尔山路过
+                        </div>
+                    </mu>
+                </div>
+                <br>
+                <div id="bb">
+                    <mu class="col-md-4">
+                        <a href="#">
+                            <div id="pie"
+                                 style="width: 100%;height: 130px;margin-top: 25px;padding-top: 100px;background-image: url(../static/img/daocheng.jpg)">
+                                <p style="color: white;text-align: center;font-size: 110%"> 遇见秋天不一样的俄罗斯</p></div>
+                        </a>
+                        <div id="b">
+                            战斗民族的古典奢华
+                        </div>
+                    </mu>
+                    <mu class="col-md-4">
+                        <a href="#">
+                            <div id="pie"
+                                 style="width: 100%;height: 130px;margin-top: 25px;padding-top: 100px;background-image: url(../static/img/daocheng.jpg)">
+                                <p style="color: white;text-align: center;font-size:110%">你不能错过的荷尔蒙之城</p></div>
+                        </a>
+                        <div id="b">
+                            疯狂啤酒节，就来慕尼黑
+                        </div>
+                    </mu>
+                    <mu class="col-md-4">
+                        <a href="#">
+                            <div id="pie"
+                                 style="width: 100%;height: 130px;margin-top: 25px;padding-top: 100px;background-image: url(../static/img/daocheng.jpg)">
+                                <p style="color: white;text-align: center;font-size:110%"> 一览川藏秋景荟萃</p></div>
+                        </a>
+                        <div id="b">
+                            蓝色星球的净土之旅
+                        </div>
+                    </mu>
+                </div>
+            </me>
+        </div>
+        <div id="con_c_2" class="cc" style="display:none;">
+            <p>神的后花园 </p>
+        </div>
+        <div id="con_c_3" class="cc" style="display:none;">
+            <p>石沉大海</p>
+        </div>
+        <div id="con_c_4" class="cc" style="display:none;">
+
+            <p>mmmmmmmm</p></div>
+    </div>
+    <div class="col-md-1">
+    </div>
+</div>
+<div class="row clearfix" style="margin-top: 20px">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-8">
+        <h3 style="margin-top: 20px">攻略游记</h3>
+        <div id="h5">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active"><a href="#p1" data-toggle="tab" style="color: black">热门游记</a></li>
+                <span style="margin-left: 10px;font-size: smaller">|</span>
+
+                <li style="margin-left: 10px;"><a href="#p2" data-toggle="tab" style="color: black">优质精华</a></li>
+            </ul>
+        </div>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="p1">
+                <div style="width: 100%;border: 1px solid  #c8cbcf;margin-top: 30px">
+                    <div style="
+                        width: 10%;height:50px;background-color: #c8cbcf;font-size: 105%;color: black;padding-top: 13px;padding-left: 2%">
+                        目的地
+                    </div>
+                    <ul id="blank" class="nav nav-tabs">
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:12%;"><a
+                                href="#beijing" data-toggle="tab">北京</a></li>
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:-2%;"><a
+                                href="#chengdu" data-toggle="tab">成都</a></li>
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:-2%;"><a
+                                href="#shanghai" data-toggle="tab">上海</a></li>
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:-2%;"><a
+                                href="#xianggang" data-toggle="tab">香港</a></li>
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:-2%;"><a
+                                href="#chongqing" data-toggle="tab">重庆</a></li>
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:-2%;"><a
+                                href="#guangzhou" data-toggle="tab">广州</a></li>
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:-2%;"><a
+                                href="#xian" data-toggle="tab">西安</a></li>
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:-2%;"><a
+                                href="#nanjing" data-toggle="tab">南京</a></li>
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:-2%;"><a
+                                href="#sanya" data-toggle="tab">三亚</a></li>
+                        <li style="color: black;width: 7%;margin-top: -35px; font-size: small;margin-left:-2%;"><a
+                                href="#hangzhou" data-toggle="tab">杭州</a></li>
+                    </ul>
+                </div>
+                <div id="myTabContent" class="tab-content ">
+                    <div class="tab-pane fade in active" id="beijing">
+                        <ee>
+                            <img src="../static/img/gonglve8.jpg">
+                        </ee>
+                        <ee style="margin-left: 10%;margin-top: -65px">
+                            <h5><a href="#">11月出发精选6大热门城市应季旅行地.温泉/枫叶/银杏，这样过秋天最舒服</a></h5>
+                            <p>2018-10-16 &nbsp出发&nbsp| &nbsp共一天</p>
+                            <p style="margin-top: -10px;font-size: smaller"><span
+                                    style="font-size:smaller;color: grey ">途径：</span>北京>上海>西安>深圳</p>
+                            <p style="margin-top: -10px;font-size: smaller"><span
+                                    style="font-size:smaller;color: grey ">行程：</span>钓鱼台银杏大道>北京春晖园温泉度假酒店>复兴中路>汤连得金沙江118温泉馆>古观音禅寺>西安临潼悦椿温泉酒店>梧桐山>石岩湖温泉度...
+                            </p>
+                            <div style="float: left ;margin-left: 10px;">
+                                <img src="../static/img/gonglve9.jpg">
+                            </div>
+                            <div style="float: left;margin-left: 10px">
+                                <img src="../static/img/gonglve10.jpg">
+                            </div>
+                            <div style="float: left;">
+                                <img src="../static/img/gonglve11.gif">
+                            </div>
+                        </ee>
+                    </div>
+                    <div class="tab-pane fade " id="chengdu">
+                        <p>你好2</p>
+                    </div>
+                    <div class="tab-pane fade " id="shanghai">
+                        <p>你好3</p>
+                    </div>
+                    <div class="tab-pane fade" id="xianggang">
+                        <p>你好4</p>
+                    </div>
+                    <div class="tab-pane fade" id="chongqing">
+                        <p>你好5</p>
+                    </div>
+                    <div class="tab-pane fade " id="guangzhou">
+                        <p>你好6</p>
+                    </div>
+                    <div class="tab-pane fade" id="xian">
+                        <p>你好7</p>
+                    </div>
+                    <div class="tab-pane fade " id="nanjing">
+                        <p>你好8</p>
+                    </div>
+                    <div class="tab-pane fade" id="sanya">
+                        <p>你好9</p>
+                    </div>
+                    <div class="tab-pane fade" id="hangzhou">
+                        <p>你好10</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="p2">
+                图片
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

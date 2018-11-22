@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML5移动端外观时尚的日期时间选择控件DEMO演示</title>
+<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../static/css/datedropper.css">
+<link rel="stylesheet" type="text/css" href="../static/css/timedropper.min.css">
+<style type="text/css">
+
+</style>
+
+</head>
+
+<body>
+
+<p>请选择日期：<input type="text" class="input" id="pickdate" />
+<script type="text/javascript" src="../static/js/ku/jquery-3.3.1.min.js"></script>
+<script src="../static/js/ku/datedropper.min.js"></script>
+<script src="../static/js/ku/timedropper.min.js"></script>
+<script>
+$("#pickdate").dateDropper({
+	animate: false,
+	format: 'Y-m-d',
+	maxYear: '2020'
+});
+$("#picktime").timeDropper({
+	meridians: false,
+	format: 'HH:mm',
+});
+</script>
+
+
+</body>
+</html>

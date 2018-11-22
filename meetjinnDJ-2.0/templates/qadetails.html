@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问题</title>
+    {#    导航栏#}
+    <link rel="icon" href="../static/img/logo2.png" type="image/png">
+    <link rel="stylesheet" href="../static/css/pinglun/comment.css">
+    <link rel="stylesheet" href="../static/css/pinglun/style.css">
+    <link rel="stylesheet" href="../static/css/ku/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/daohang.css">
+    <link rel="stylesheet" href="../static/css/questionandanswer.css">
+    <script src="../static/js/ku/jquery.min.js"></script>
+    <script src="../static/js/ku/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #log_window {
+            position: absolute;
+            top: 0; /**遮罩全屏top,left都为0,width,height为100%**/
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: alpha(opacity=30);
+            opacity: 0.3;
+            -moz-opacity: 0.5;
+            -khtml-opacity: 0.5;
+            background-color: black;
+            z-index: 5;
+            display: none;
+        }
+
+        #divzhe {
+            text-align: center;
+            position: absolute;
+            width: 600px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 10px;
+            color: black;
+            z-index: 1000;
+            font-family: 微软雅黑;
+        }
+
+        #test {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            display: none;
+        }
+    </style>
+
+    {#    顶部跟随#}
+
+
+    {#    评论#}
+
+
+    {#    公共#}
+    <style>
+        a {
+            color: #178DB1;
+        }
+
+        #body_right > div {
+            box-shadow: 0 0 0.4px 2px rgba(58, 58, 58, 0.13);
+            background-color: white;
+        }
+    </style>
+
+
+    <script>
+        $(document).ready(function () {
+            var loadingbutton = document.getElementById('loadingbutton');
+            loadingbutton.setAttribute("clicktime", 2);
+            var problemtitle = document.getElementById('problemtitle');
+            problemtitle.setAttribute("problemid", {{ problem0.problem_id }})
+        })
+    </script>
+
+</head>
+<body style="background-color: rgba(167,167,167,0.15);width: 100%;">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="font-size: 16px;margin: 0;padding: 0">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cla1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <img src="../static/img/logo1.png" alt="">
+    <div class="collapse navbar-collapse" id="cla1">
+        <ul class="navbar-nav pull-right" style="margin: 0 10px 0 auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/homepage/">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/">目的地</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    旅游攻略
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/travels/">游记</a>
+                    <a class="dropdown-item" href="/list/">榜单</a>
+                    <a class="dropdown-item" href="/recommend/">景点推荐</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown" style="background: rgb(0,104,183);border-radius: 5px">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    社区
+                </a>
+                <div class="dropdown-menu" style="text-align: center">
+                    <a class="dropdown-item" href="/qa/">问答</a>
+                    <a class="dropdown-item" href="/companions/">结伴</a>
+                </div>
+            </li>
+            {% if request.session.is_login %}     
+                <li class="nav-item"><a href="/house/" class="nav-link">{{ request.session.user_name }}</a></li>
+                <li class="nav-item"><a href="/logout/" class="nav-link">注销账号</a></li>
+            {% else %}
+                <li class="nav-item"><a href="/signin/" class="nav-link">登录/注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<div id="test"></div>
+<div style="background-color: white" id="header">
+    <div class="container" style="display: flex">
+        <div id="problemtitle">
+            <h2>{{ problem0.problem_title }}</h2>
+        </div>
+        <div style="margin: 25px 50px auto auto">
+            <button class="btn" style="font-size: 20px" id="a1">我要回答</button>
+        </div>
+    </div>
+</div>
+<div style="width: 100%;box-shadow: 0 4px 0.4px -2px rgba(58,58,58,0.13);background-color: white;margin-top: 0">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-9 column">
+                <div class="problem">
+                    <span>{{ problem0.problem_text }}</span>
+                </div>
+                <div>{{ answer_number }}人回答</div>
+            </div>
+            <div class="col-md-3 column">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="log_window">
+    <div id="divzhe">
+        <h3>图片<span id="err1"></span>请重新上传正规图片!!</h3>
+        <a href="javascript:cancel_shield()">关闭</a>
+    </div>
+               
+</div>
+<div class="container">
+    <div class="row clearfix">
+        <div id="answerlist" class="col-md-9 column">
+            {% for answer in answer_list %}
+                <div style="margin: 20px auto;box-shadow: 0 0 0.4px 2px rgba(58,58,58,0.13);background-color: white">
+                    <div style="margin: 10px;width: auto;">
+                        <div class="answer">
+                            <div style="display: flex;margin-top: 10px;">
+                                <div>
+                                    <img src="{{ answer.user_img }}"
+                                         style="width: 43px;border-radius: 50%">
+                                </div>
+                                <div style="line-height:43px;margin-left: 5px">
+                                    {{ answer.user_name }}
+                                </div>
+                            </div>
+                            <div>
+                                <p><span>{{ answer.answer_fabulous }}人赞了TA</span></p>
+                            </div>
+                            <div style="text-align: left">
+                                {{ answer.answer_md }}
+                            </div>
+
+
+                        </div>
+                        <div style="width: 100%;height:40px;">
+                            <div style="width: 49%;float: left;text-align: center;border-right: rgba(5,5,5,0.6) 1px solid">
+                                <div style="margin-top: 10px">
+                                    <a onclick="zananswer(this)" style="color: {{ answer.zancolor }};font-size: 15px"
+                                       data-answerid="{{ answer.answer_id }}">
+                                        <span style="">赞</span>(<span
+                                            id="{{ answer.zan_id }}">{{ answer.answer_fabulous }}</span>)
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="panel-group" id='{{ answer.divIDdiva }}'
+                                 style="width: 49%;height: 38px;float: left;text-align: center;">
+                                <div class="panel-heading" style="margin-top: 0;">
+                                    <a class="panel-title collapsed" data-toggle="collapse"
+                                       data-parent='{{ answer.divPARENTa }}'
+                                       href="{{ answer.aHREF }}" data-answerid="{{ answer.answer_id }}"
+                                       onclick="loadcomment(this)">
+                                        <span style="font-size: 15px">评论({{ answer.comment_number }})</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id='{{ answer.commentareaID }}' class='panel-collapse collapse'>
+                            <div class="panel-body comment-block">
+                                <!--下方弹出来内容-->
+                                <div class="comment-areaarea">
+                                    <!--评论区域 begin-->
+                                    {% if request.session.is_login %}
+                                        <div class="reviewArea clearfix">
+                                        <textarea id="{{ answer.writeCommentID }}" class="content comment-input"
+                                                  placeholder="评论一下&hellip;" onkeyup="keyUP(this)"></textarea>
+                                            <a href="javascript:;" class="plBtn" onclick="sentcomment(this)"
+                                               data-answerid="{{ answer.answer_id }}">评论</a>
+                                        </div>
+                                    {% endif %}
+                                    <!--评论区域 end-->
+
+                                    <!--回复区域 begin-->
+                                    <div class="comment-listlist">
+                                        <div class="comment-show" id="{{ answer.commentlist_id }}">
+
+                                        </div>
+                                    </div>
+                                    <!--回复区域 end-->
+                                </div>
+                            </div>
+                        </div>
+
+                        {#                        评论#}
+                    </div>
+                </div>
+            {% endfor %}
+            <div id="new-answer">
+
+            </div>
+
+            {#            加载更多#}
+            {#            <div style="text-align: center">#}
+            {#                <button id="loadingbutton" onclick="loading()">加载更多</button>#}
+            {#            </div>#}
+
+
+            {#        赞回答#}
+
+            <script>
+                {% if request.session.is_login %}
+                    function zananswer(t) {
+                        var answerid = t.getAttribute("data-answerid")
+                        var zanid = "zan-" + answerid
+                        var zannumber = document.getElementById(zanid).innerText
+                        if (t.style.color == "black") {
+                            var jiajian = 1
+                            document.getElementById(zanid).innerText = parseInt(zannumber) + jiajian
+                            t.style.color = "red"
+                        } else {
+                            var jiajian = -1
+                            document.getElementById(zanid).innerText = parseInt(zannumber) + jiajian
+                            t.style.color = "black"
+                        }
+                        html = $.ajax({
+                            url: "/qadetails/",
+                            type: "POST",
+                            data: {"answerid": answerid, "jiajian": jiajian, "type": "zananswer"},
+                        })
+                    }
+                    </script>
+
+                    {#评论#}
+                    <script>
+                    function sentcomment(t) {
+                        var answerid = t.getAttribute("data-answerid")
+                        var writeCommentID = "writeCommentID" + answerid
+                        var newcomment = document.getElementById(writeCommentID).value
+                        html = $.ajax({
+                            url: "/qadetails/",
+                            type: 'POST',
+                            data: {"answerid": answerid, "newcomment": newcomment, "type": "writecomment"},
+                            success: function (html) {
+                                if (html['reselt'] == '1') {
+                                    alert(html['content'])
+                                }
+                                else {
+                                    var commentareaid = "commentlist" + answerid;
+                                    var commentarea = document.getElementById(commentareaid);
+                                    commentarea.innerHTML = html['html'] + commentarea.innerHTML
+                                }
+                            }
+                        })
+
+                    }
+                {% endif %}
+                function loadcomment(t) {
+                    var answerid = t.getAttribute("data-answerid")
+                    html = $.ajax({
+                        url: "/qadetails/",
+                        type: 'POST',
+                        data: {"answerid": answerid, "type": "comment"},
+                        success: function (html) {
+                            var commentlistid = "commentlist" + answerid
+                            var commentshow = document.getElementById(commentlistid)
+                            commentshow.innerHTML = html
+                        }
+                    })
+                }
+                </script>
+
+            {% if request.session.is_login %}
+                {#        fabulous#}
+                <script>
+                    function zancomment(t) {
+                        var commentid = t.getAttribute("data-commentid")
+                        var praisenumberID = "praise-number-" + commentid
+
+                        var num = parseInt(document.getElementById(praisenumberID).innerText)
+
+                        var src = t.getAttribute("src")
+                        if (src == ("../static/img/fabulous/meizan2.png")) {
+                            t.setAttribute("src", "../static/img/fabulous/yizan2.png")
+                            document.getElementById(praisenumberID).innerText = num + 1
+                            var jiajian = 1
+                        } else {
+                            t.setAttribute("src", "../static/img/fabulous/meizan2.png")
+                            document.getElementById(praisenumberID).innerText = num - 1
+                            var jiajian = -1
+                        }
+                        html = $.ajax({
+                            url: "/qadetails/",
+                            type: 'POST',
+                            data: {"jiajian": jiajian, "type": "dianzan", "commentid": commentid},
+                            success: function (html) {
+                                var answerlist = document.getElementById("new-answer");
+                                answerlist.innerHTML = document.getElementById("new-answer").innerHTML + html
+                            }
+                        });
+                    }
+                </script>
+
+                {#         写回复#}
+                <script>
+                    function XieHuifu(t) {
+
+                        html = $.ajax({
+                            url: "",
+                            type: 'POST',
+                            data: {"type": "XieHuifu"},
+                            success: function (html) {
+
+                            }
+                        })
+
+                    }
+                </script>
+
+
+                <script>
+                    function DeleteComment(t) {
+                        var commentid = t.getAttribute("data-commentid");
+                        document.getElementById(commentid).style.display = "none";
+                        html = $.ajax({
+                            url: "/qadetails/",
+                            type: 'POST',
+                            data: {'commentid': commentid, "type": "DeleteComment"},
+                        });
+                    }
+                </script>
+            {% endif %}
+
+            <script src="../static/js/ku/jquery.min.js"></script>
+            <script src="../static/js/contentdisplay/readmore.js"></script>
+            <script>
+                $('.answer').readmore({
+                    speed: 100,
+                    moreLink: '<a href="#" style="margin-right=0;text-align: right">展开全文</a>',
+                    lessLink: '<a href="#" style="margin-right=0;text-align: right">收起</a>',
+                    heightMargin: 20,
+                    maxHeight: 300,
+
+                    afterToggle: function (trigger, element, expanded) {
+
+                        if (!expanded) { // The "Close" link was clicked
+
+                            $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
+
+                        }
+
+                    }
+
+                });
+                $('.problem').readmore({
+                    moreLink: '<div style="margin-right=0;text-align: right"><a href="#">问题详情</a></div>',
+                    lessLink: '<div style="margin-right=0;text-align: right"><a href="#">收起</a></div>',
+                    maxHeight: 35,
+                })
+            </script>
+
+            <link href="../static/css/ku/fuwenbenboots.css" rel="stylesheet">
+            <script src="../static/js/ku/fuwenbenjq.js"></script>
+            <script src="../static/js/ku/fuwenbenboot.js"></script>
+            <link href="../static/jq22summernote-develop847420160420/summernote-develop20160420/summernote.css"
+                  rel="stylesheet">
+            <script src="../static/jq22summernote-develop847420160420/summernote-develop20160420/summernote.js"></script>
+
+            <div>
+                <p id="b1"></p>
+                <script>
+                    $(function () {
+                        $('#a1').click(function () {
+                            //根据a标签的href转换为id选择器，获取id元素所处的位置，并高度减50px（这里根据需要自由设置）
+                            $('html,body').animate({scrollTop: ($("#b1").offset().top - 50)}, 800);
+                        });
+                    });
+                </script>
+                {% if request.session.is_login %}
+                    <div id="summernote"></div>
+                {% endif %}
+            </div>
+            <script>
+                function shield() {
+                    var top = ($(window).height() - $('#test').height()) / 2;
+                    var left = ($(window).width() - $('#test').width()) / 2;
+                    var scrollTop = $(document).scrollTop();
+                    var scrollLeft = $(document).scrollLeft();
+                    $('#log_window').css({
+                        position: 'absolute',
+                        'top': top + scrollTop,
+                        left: left + scrollLeft
+                    }).show();
+                    $('body').css("overflow", "hidden")
+                }
+
+            </script>
+            <script>
+                $('#summernote').summernote({
+                    lang: 'zh-CN',
+                    Height: 400,
+                    placeholder: '我要回答',
+                    toolbar: [
+                        // [groupName, [list of button]]
+                        ['style1', ['style']],
+                        ['style', [, 'bold', 'italic', 'underline', 'strikethrough']],
+                        ['para', ['ul', 'ol',]],
+                        ['insert', ['link', 'picture',]],
+                        ["misc", ['fullscreen', 'undo', 'redo']]
+                    ],
+                    callbacks: {
+                        onImageUpload: function (files) {
+                            var imageData = new FormData();
+                            imageData.append("imageData", files[0]);
+                            $.ajax({
+                                data: imageData,
+                                type: "POST",
+                                url: "/passimg/",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function (result) {
+                                    s = result.substr(0, 1);
+                                    if (s == 'h') {
+                                        var imgNode = document.createElement("img");
+                                        imgNode.src = result;
+                                        $('#summernote').summernote('insertNode', imgNode);
+                                    }
+                                    else {
+                                        $("#err1").html(result);
+                                        shield();
+                                    }
+
+                                },
+                                error: function () {
+                                    alert("服务器异常，请重新操作。");
+                                }
+                            });
+                        }
+                    }
+                });
+            </script>
+            <script>
+                function ajaxwen() {
+                    html = document.getElementsByClassName('note-editable panel-body')[0].innerHTML;
+                    id = {{ problem0.problem_id }}
+                        $.ajax({
+                            data: {'html': html, 'id': id},
+                            type: "POST",
+                            url: '/questionanswering/',
+                            success: function () {
+                            }
+                        })
+                }
+            </script>
+            <div style="text-align: center;margin: 30px">
+                {% if request.session.is_login %}
+                    <button class="btn btn-primary" onclick="ajaxwen()">提交回答</button>
+                {% else %}
+                    <a href="/register/" style="font-size: 20px;color: #ee6600">未登录，请登陆后回答。</a>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3 column" id="body_right" style="text-align: center">
+            <button class="btn"
+                    style="background: #ee8800;width: 90%;margin-top:20px;margin-bottom:20px;color: white;font-size: 18px">
+                我要提问
+            </button>
+            <img src="{{ city.city_img_url }}" width="90%" alt=""><br>
+            <h4><a href="/region/?data={{ city.city_id }}">{{ city.city_name }}</a></h4>
+        </div>
+    </div>
+</div>
+
+<div class="row clearfix" style="background:rgba(52,58,64,1)">
+    <div class="col-md-2 column">
+    </div>
+    <div class="col-md-8 column">
+        <div id="fool" style="width: 100%;text-align: center;height: 100px;color: #e2e3e5;">
+            <p style="margin-top: 20px">© 2018 meetjinn.com 京ICP备0000000号
+                <img src="http://images.mafengwo.net/images/footer/police_record.png"
+                     width="12" style="margin:0 2px 4px 0;">公网安备000000000号<span
+                        class="m_l_10">违法和不良信息举报电话: ---------- 举报邮箱 ----------</span></p>
+            <p>网络出版服务许可证：----------<span class="m_l_10">增值电信业务经营许可证：京00000000</span> 营业执照帮助中心<span
+                    class="m_l_10">觅景客服:</span><span
+                    class="highlight">4006-000-000</span>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+</body>
+</html>
